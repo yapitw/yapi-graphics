@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-
+import { ThreeLab } from "../template"
 interface IUniforms {
   u_time: { type: 'f'; value: number }
   u_resolution: { type: 'v2'; value: THREE.Vector2 }
@@ -8,28 +8,19 @@ interface IUniforms {
   u_picture: { type: 't'; value: THREE.Texture }
 }
 
-import vertexShader from './shaderVertex.glsl'
-import fragmentShader from './shaderFragment.glsl'
-
-export class Lab2 {
-  camera: THREE.OrthographicCamera
-  scene: THREE.Scene
-  renderer: THREE.WebGLRenderer
-  canvas: HTMLCanvasElement
+export class Lab2 extends ThreeLab {
   uniforms: IUniforms
   textBuffer1: THREE.WebGLRenderTarget
   textBuffer2: THREE.WebGLRenderTarget
   switchTag: boolean
-  pixelRatio: number
-  renderSize: number
 
-  constructor() {
-    this.init = this.init.bind(this)
-    this.animation = this.animation.bind(this)
+  constructor(container: HTMLDivElement) {
+    super(container)
     this.init()
     this.animation()
   }
-  init() {
+
+  init = () => {
     this.scene = new THREE.Scene()
     this.camera = new THREE.OrthographicCamera(-2, 2, -2, 2)
     this.renderer = new THREE.WebGLRenderer({ alpha: true })
@@ -39,7 +30,7 @@ export class Lab2 {
     const { scene, camera, renderer, pixelRatio, renderSize } = this
     renderer.setSize(renderSize, renderSize)
     renderer.setPixelRatio(pixelRatio)
-    document.getElementById('app').appendChild(renderer.domElement)
+    this.container.appendChild(renderer.domElement)
 
     camera.position.set(1, 1, 1)
     camera.lookAt(0, 0, 0)
@@ -56,8 +47,8 @@ export class Lab2 {
 
     const material = new THREE.ShaderMaterial({
       uniforms: this.uniforms,
-      vertexShader,
-      fragmentShader,
+      vertexShader: require('./shaderVertex.glsl'),
+      fragmentShader: require('./shaderFragment.glsl'),
     })
     const mesh = new THREE.Mesh(geometry, material)
     scene.add(mesh)
@@ -75,7 +66,7 @@ export class Lab2 {
     this.textBuffer2 = new THREE.WebGLRenderTarget(renderSize * pixelRatio, renderSize * pixelRatio, targetOptions)
 
   }
-  animation() {
+  animation = () => {
     const { scene, camera, renderer } = this
     for (let i = 0; i < 8; i++) {
       this.uniforms.u_texture.value = this[this.switchTag ? 'textBuffer1' : 'textBuffer2'].texture

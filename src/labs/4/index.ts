@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import { Lab } from '../template'
 
 document.addEventListener('DOMContentLoaded', () => {
   // document.querySelector<HTMLDivElement>('#app').style.filter = 'saturate(0) brightness(1.4) contrast(2)'
@@ -15,24 +16,19 @@ interface IUniforms {
   u_mousedown: { type: 'bool'; value: boolean }
 }
 
-export class Lab4 {
-  camera: THREE.OrthographicCamera
-  scene: THREE.Scene
-  renderer: THREE.WebGLRenderer
-  canvas: HTMLCanvasElement
+export class Lab4 extends ThreeLab {
   uniforms: IUniforms
   textBuffer1: THREE.WebGLRenderTarget
   textBuffer2: THREE.WebGLRenderTarget
   switchTag: boolean
-  pixelRatio: number
-  renderSize: number
-  constructor() {
-    this.init = this.init.bind(this)
-    this.animation = this.animation.bind(this)
+
+  constructor(container: HTMLDivElement) {
+    super(container)
     this.init()
     this.animation()
   }
-  init() {
+
+  init = () => {
     this.scene = new THREE.Scene()
     this.camera = new THREE.OrthographicCamera(-2, 2, -2, 2)
     this.renderer = new THREE.WebGLRenderer({ alpha: true })
@@ -44,7 +40,6 @@ export class Lab4 {
 
     renderer.setSize(renderSize, renderSize)
     renderer.setPixelRatio(pixelRatio)
-    document.getElementById('app').appendChild(renderer.domElement)
 
     camera.position.set(1, 1, 1)
     camera.lookAt(0, 0, 0)

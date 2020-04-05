@@ -1,8 +1,5 @@
 import * as THREE from 'three'
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector<HTMLDivElement>('#app').style.filter = 'saturate(0) brightness(1.4) contrast(2)'
-})
+import { ThreeLab } from "../template"
 
 const texture = new THREE.TextureLoader().load('dist/doodle.png')
 
@@ -14,27 +11,19 @@ interface IUniforms {
   u_picture: { type: 't'; value: THREE.Texture }
 }
 
-export class Lab3 {
-  camera: THREE.OrthographicCamera
-  scene: THREE.Scene
-  renderer: THREE.WebGLRenderer
-  canvas: HTMLCanvasElement
+export class Lab3 extends ThreeLab {
   uniforms: IUniforms
   textBuffer1: THREE.WebGLRenderTarget
   textBuffer2: THREE.WebGLRenderTarget
   switchTag: boolean
-  pixelRatio: number
-  renderSize: number
-  constructor() {
-    this.init = this.init.bind(this)
-    this.animation = this.animation.bind(this)
+
+  constructor(container: HTMLDivElement) {
+    super(container)
     this.init()
     this.animation()
   }
-  init() {
-    this.scene = new THREE.Scene()
-    this.camera = new THREE.OrthographicCamera(-2, 2, -2, 2)
-    this.renderer = new THREE.WebGLRenderer({ alpha: true })
+
+  init = () => {
     this.pixelRatio = 1.2
     this.renderSize = 350
     this.switchTag = false
@@ -43,12 +32,14 @@ export class Lab3 {
 
     renderer.setSize(renderSize, renderSize)
     renderer.setPixelRatio(pixelRatio)
-    document.getElementById('app').appendChild(renderer.domElement)
+    this.container.appendChild(renderer.domElement)
 
     camera.position.set(1, 1, 1)
     camera.lookAt(0, 0, 0)
 
     this.canvas = document.querySelector('canvas')
+    this.canvas.style.filter = 'saturate(0) brightness(1.4) contrast(2)'
+
     const geometry = new THREE.PlaneBufferGeometry(2, 2)
     this.uniforms = {
       u_time: { type: 'f', value: 0 },
@@ -82,15 +73,15 @@ export class Lab3 {
     this.uniforms.u_resolution.value.x = renderSize * pixelRatio
     this.uniforms.u_resolution.value.y = renderSize * pixelRatio
 
-    const container = document.querySelector<HTMLDivElement>('#app')
     document.onmousemove = e => {
-      const x = e.pageX - container.offsetLeft
-      const y = e.pageY - container.offsetTop
+      const x = e.pageX - this.container.offsetLeft
+      const y = e.pageY - this.container.offsetTop
       this.uniforms.u_mouse.value.x = x
       this.uniforms.u_mouse.value.y = y
     }
   }
-  animation() {
+
+  animation = () => {
     const { scene, camera, renderer } = this
     for (let i = 0; i < 8; i++) {
       this.uniforms.u_texture.value = this[this.switchTag ? 'textBuffer1' : 'textBuffer2'].texture

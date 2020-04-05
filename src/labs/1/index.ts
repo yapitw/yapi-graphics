@@ -1,43 +1,20 @@
 import * as THREE from 'three'
+import { ThreeLab } from "../template"
 
-interface IUniforms {
-  u_time: {
-    type: string
-    value: number
-  }
-}
-
-import vertexShader from './shaderVertex.glsl'
-import fragmentShader from './shaderFragment.glsl'
-
-export class Lab1 {
-  camera: THREE.OrthographicCamera
-  scene: THREE.Scene
-  renderer: THREE.WebGLRenderer
-  canvas: HTMLCanvasElement
-  uniforms: IUniforms
-  pixelRatio: number
-  renderSize: number
+export class Lab1 extends ThreeLab {
   mesh: THREE.Mesh
 
-  constructor() {
-    this.init = this.init.bind(this)
-    this.animation = this.animation.bind(this)
+  constructor(container: HTMLDivElement) {
+    super(container)
     this.init()
     this.animation()
   }
-  init() {
-
-
-    this.scene = new THREE.Scene()
-    this.camera = new THREE.OrthographicCamera(-2, 2, -2, 2)
-    this.renderer = new THREE.WebGLRenderer({ alpha: true })
+  init = () => {
     this.pixelRatio = window.devicePixelRatio
     this.renderSize = 350
     const { scene, camera, renderer, pixelRatio, renderSize } = this
     renderer.setSize(renderSize, renderSize)
     renderer.setPixelRatio(pixelRatio)
-    document.getElementById('app').appendChild(renderer.domElement)
 
     camera.position.set(1, 1, 1)
     camera.lookAt(0, 0, 0)
@@ -47,8 +24,8 @@ export class Lab1 {
 
     const material = new THREE.RawShaderMaterial({
       uniforms: this.uniforms,
-      vertexShader: vertexShader,
-      fragmentShader: fragmentShader,
+      vertexShader: require('./shaderVertex.glsl'),
+      fragmentShader: require('./shaderFragment.glsl'),
       transparent: true,
       depthWrite: false,
       depthTest: false,
@@ -60,7 +37,8 @@ export class Lab1 {
     this.mesh = new THREE.Mesh(geometry, material)
     scene.add(this.mesh)
   }
-  animation() {
+
+  animation = () => {
     const { scene, camera, renderer } = this
     this.uniforms.u_time.value += 0.005
     renderer.render(scene, camera)
