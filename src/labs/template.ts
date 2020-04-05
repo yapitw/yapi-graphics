@@ -13,8 +13,8 @@ export class ThreeLab {
   scene: THREE.Scene
   renderer: THREE.WebGLRenderer
   canvas: HTMLCanvasElement
-  pixelRatio: number
-  renderSize: number
+  pixelRatio: number = 1
+  renderSize: number = 512
   uniforms: IUniforms
   terminated: boolean = false
 

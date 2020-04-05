@@ -11,9 +11,9 @@ export class Lab1 extends ThreeLab {
   }
   init = () => {
     this.pixelRatio = window.devicePixelRatio
-    this.renderSize = 350
+    this.renderSize = 512
     const { scene, camera, renderer, pixelRatio, renderSize } = this
-    renderer.setSize(renderSize, renderSize)
+    renderer.setSize(renderSize, renderSize, false)
     renderer.setPixelRatio(pixelRatio)
 
     camera.position.set(1, 1, 1)

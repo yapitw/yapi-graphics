@@ -27,9 +27,9 @@ export class Lab6 {
   init = () => {
     this.cvs.width = this.width
     this.cvs.height = this.height
-    this.cvs.style.width = '350px'
-    this.cvs.style.height = '350px'
-      ; (this.app ? this.app : document.querySelector('body')).appendChild(this.cvs)
+    this.cvs.style.width = '500px'
+    this.cvs.style.height = '500px'
+    this.app.appendChild(this.cvs)
 
     this.clear()
     particleDots = new ParticleSystem({

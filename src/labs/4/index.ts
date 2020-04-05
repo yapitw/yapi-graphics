@@ -31,7 +31,7 @@ export class Lab4 extends ThreeLab {
 
     const { scene, camera, renderer, pixelRatio, renderSize } = this
 
-    renderer.setSize(renderSize, renderSize)
+    renderer.setSize(renderSize, renderSize, false)
     renderer.setPixelRatio(pixelRatio)
 
     camera.position.set(1, 1, 1)
@@ -39,8 +39,6 @@ export class Lab4 extends ThreeLab {
 
     this.canvas = document.querySelector('canvas')
     this.canvas.style.filter = 'saturate(0) brightness(1.4) contrast(2)'
-    this.canvas.style.width = '350px'
-    this.canvas.style.height = '350px'
     const geometry = new THREE.PlaneBufferGeometry(2, 2)
     this.uniforms = {
       u_time: { type: 'f', value: 0 },
@@ -79,9 +77,11 @@ export class Lab4 extends ThreeLab {
     text.innerText = 'TOUCH'
     text.style.position = 'absolute'
     text.style.color = 'white'
-    text.style.left = '50%'
+    text.style.width = window.getComputedStyle(this.canvas).width
+    text.style.left = '0'
     text.style.top = '50%'
-    text.style.transform = 'translate(-50%, -50%)'
+    text.style.transform = 'translateY(-50%)'
+    text.style.textAlign = 'center'
     text.style.textShadow = '0 0 15px rgba(255,255,255, 0.3)'
     this.container.style.position = 'relative'
     this.container.appendChild(text)

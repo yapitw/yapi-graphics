@@ -11,13 +11,13 @@ export class Lab7 {
   app: HTMLDivElement
   cvs: HTMLCanvasElement
   ctx: CanvasRenderingContext2D
-  height: number = 2000
+  height: number = 3000
   width: number = 3000
   gridSize: number = 25 // size of force saving
   xoff: number = 0
   yoff: number = 0
   zoff: number = 0
-  
+
   constructor(container: HTMLDivElement) {
     this.app = container
     this.cvs = document.createElement('canvas')
@@ -28,9 +28,7 @@ export class Lab7 {
   init = () => {
     this.cvs.width = this.width
     this.cvs.height = this.height
-    this.cvs.style.width = '750px'
-    this.cvs.style.height = '500px'
-      ; (this.app ? this.app : document.querySelector('body')).appendChild(this.cvs)
+    this.app.appendChild(this.cvs)
 
     this.clear()
     particleDots = new ParticleSystem({

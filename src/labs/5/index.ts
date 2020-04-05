@@ -23,8 +23,6 @@ export class Lab5 {
   init = () => {
     this.cvs.width = this.width
     this.cvs.height = this.height
-    this.cvs.style.width = '350px'
-    this.cvs.style.height = '350px'
     ;(this.app ? this.app : document.querySelector('body')).appendChild(this.cvs)
 
     this.draw()

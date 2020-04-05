@@ -1,19 +1,23 @@
 import * as React from "react"
 import ReactDOM from "react-dom"
-import ThreeContainer from './components/ThreeContainer';
-import { BrowserRouter, NavLink, Route } from "react-router-dom"
-import * as labs from "./labs"
+import { BrowserRouter, Route } from "react-router-dom"
 
-const root = document.getElementById("root")
+import ThreeContainer from './components/ThreeContainer';
+import MenuList from './components/MenuList';
+
 const App = () => {
   return (
     <BrowserRouter>
-      {Object.keys(labs).map((key) => {
-        return <NavLink to={key} key={key}>{key}</NavLink>
-      })}
-      <Route path="/:id" component={ThreeContainer} />
+      <div className="app">
+        <div className="menu-list">
+          <MenuList />
+        </div>
+        <div className="content">
+          <Route path="/:id" component={ThreeContainer} />
+        </div>
+      </div>
     </BrowserRouter >
   )
 }
 
-ReactDOM.render(<App />, root)
+ReactDOM.render(<App />, document.getElementById("root"))
