@@ -24,15 +24,14 @@ export class Lab3 extends ThreeLab {
   }
 
   init = () => {
-    this.pixelRatio = 1.2
-    this.renderSize = 350
+    this.pixelRatio = 1
+    this.renderSize = 512
     this.switchTag = false
 
     const { scene, camera, renderer, pixelRatio, renderSize } = this
 
     renderer.setSize(renderSize, renderSize)
     renderer.setPixelRatio(pixelRatio)
-    this.container.appendChild(renderer.domElement)
 
     camera.position.set(1, 1, 1)
     camera.lookAt(0, 0, 0)
@@ -83,7 +82,7 @@ export class Lab3 extends ThreeLab {
 
   animation = () => {
     const { scene, camera, renderer } = this
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 24; i++) {
       this.uniforms.u_texture.value = this[this.switchTag ? 'textBuffer1' : 'textBuffer2'].texture
       renderer.setRenderTarget(this[this.switchTag ? 'textBuffer2' : 'textBuffer1'])
       renderer.render(scene, camera)
@@ -94,6 +93,6 @@ export class Lab3 extends ThreeLab {
 
     renderer.setRenderTarget(null)
     renderer.render(scene, camera)
-    requestAnimationFrame(this.animation)
+    if (!this.terminated) requestAnimationFrame(this.animation)
   }
 }

@@ -1,9 +1,5 @@
 import * as THREE from 'three'
-import { Lab } from '../template'
-
-document.addEventListener('DOMContentLoaded', () => {
-  // document.querySelector<HTMLDivElement>('#app').style.filter = 'saturate(0) brightness(1.4) contrast(2)'
-})
+import { ThreeLab } from '../template'
 
 const texture = new THREE.TextureLoader().load('dist/doodle.png')
 
@@ -29,9 +25,6 @@ export class Lab4 extends ThreeLab {
   }
 
   init = () => {
-    this.scene = new THREE.Scene()
-    this.camera = new THREE.OrthographicCamera(-2, 2, -2, 2)
-    this.renderer = new THREE.WebGLRenderer({ alpha: true })
     this.pixelRatio = 1
     this.renderSize = 512
     this.switchTag = false
@@ -45,6 +38,7 @@ export class Lab4 extends ThreeLab {
     camera.lookAt(0, 0, 0)
 
     this.canvas = document.querySelector('canvas')
+    this.canvas.style.filter = 'saturate(0) brightness(1.4) contrast(2)'
     this.canvas.style.width = '350px'
     this.canvas.style.height = '350px'
     const geometry = new THREE.PlaneBufferGeometry(2, 2)
@@ -81,7 +75,6 @@ export class Lab4 extends ThreeLab {
     this.uniforms.u_resolution.value.x = renderSize * pixelRatio
     this.uniforms.u_resolution.value.y = renderSize * pixelRatio
 
-    const container = document.querySelector<HTMLDivElement>('#app')
     const text = document.createElement('div')
     text.innerText = 'TOUCH'
     text.style.position = 'absolute'
@@ -90,13 +83,13 @@ export class Lab4 extends ThreeLab {
     text.style.top = '50%'
     text.style.transform = 'translate(-50%, -50%)'
     text.style.textShadow = '0 0 15px rgba(255,255,255, 0.3)'
-    container.style.position = 'relative'
-    container.appendChild(text)
+    this.container.style.position = 'relative'
+    this.container.appendChild(text)
 
     const moveHandler = e => {
       e.preventDefault()
-      const x = (e.pageX - container.offsetLeft) / this.canvas.clientWidth
-      const y = 1 - (e.pageY - container.offsetTop) / this.canvas.clientHeight
+      const x = (e.pageX - this.container.offsetLeft) / this.canvas.clientWidth
+      const y = 1 - (e.pageY - this.container.offsetTop) / this.canvas.clientHeight
       this.uniforms.u_mouse.value.x = x
       this.uniforms.u_mouse.value.y = y
     }
@@ -161,17 +154,18 @@ export class Lab4 extends ThreeLab {
     this.canvas.addEventListener('touchmove', e => e.preventDefault())
   }
 
-  animation() {
+  animation = () => {
     const { scene, camera, renderer } = this
-    for (let i = 0; i < 12; i++) {
-      this.uniforms.u_texture.value = this[this.switchTag ? 'textBuffer1' : 'textBuffer2'].texture
-      renderer.render(scene, camera, this[this.switchTag ? 'textBuffer2' : 'textBuffer1'], true)
-      this.uniforms.u_texture.value = this[this.switchTag ? 'textBuffer2' : 'textBuffer1'].texture
+    for (let i = 0; i < 4; i++) {
+      const textBuffer = this.switchTag ? 'textBuffer1' : 'textBuffer2'
+      renderer.setRenderTarget(this[textBuffer])
+      renderer.render(scene, camera)
+      this.uniforms.u_texture.value = this[textBuffer].texture
       this.switchTag = !this.switchTag
       this.uniforms.u_time.value += 1
     }
-
+    renderer.setRenderTarget(null)
     renderer.render(scene, camera)
-    requestAnimationFrame(this.animation)
+    if (!this.terminated) requestAnimationFrame(this.animation)
   }
 }

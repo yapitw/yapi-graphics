@@ -21,17 +21,13 @@ export class Lab2 extends ThreeLab {
   }
 
   init = () => {
-    this.scene = new THREE.Scene()
-    this.camera = new THREE.OrthographicCamera(-2, 2, -2, 2)
-    this.renderer = new THREE.WebGLRenderer({ alpha: true })
     this.pixelRatio = 1
     this.renderSize = 256
     this.switchTag = false
+
     const { scene, camera, renderer, pixelRatio, renderSize } = this
     renderer.setSize(renderSize, renderSize)
     renderer.setPixelRatio(pixelRatio)
-    this.container.appendChild(renderer.domElement)
-
     camera.position.set(1, 1, 1)
     camera.lookAt(0, 0, 0)
     this.canvas = document.querySelector('canvas')
@@ -79,6 +75,6 @@ export class Lab2 extends ThreeLab {
 
     renderer.setRenderTarget(null)
     renderer.render(scene, camera)
-    requestAnimationFrame(this.animation)
+    if (!this.terminated) requestAnimationFrame(this.animation)
   }
 }

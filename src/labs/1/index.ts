@@ -43,6 +43,6 @@ export class Lab1 extends ThreeLab {
     this.uniforms.u_time.value += 0.005
     renderer.render(scene, camera)
     requestAnimationFrame(this.animation)
-    this.mesh.rotateY(-0.05)
+    if (!this.terminated) this.mesh.rotateY(-0.05)
   }
 }

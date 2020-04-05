@@ -46,7 +46,10 @@ export class Lab0 extends ThreeLab {
   animation = () => {
     const { scene, camera, renderer } = this
     this.uniforms.u_time.value += 1
+    if (this.uniforms.u_time.value % 60 === 0) {
+      console.log(this.uniforms.u_time.value)
+    }
     renderer.render(scene, camera)
-    requestAnimationFrame(this.animation)
+    if (!this.terminated) requestAnimationFrame(this.animation)
   }
 }

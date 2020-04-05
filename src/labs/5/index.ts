@@ -1,9 +1,9 @@
 import PerlinNoise from '../../libs/PerlinNoise'
-import { ParticleSystem } from '../../libs/Partical'
 
 const perlin = new PerlinNoise()
 
 export class Lab5 {
+  terminated: boolean = false
   app: HTMLDivElement
   cvs: HTMLCanvasElement
   ctx: CanvasRenderingContext2D
@@ -13,8 +13,8 @@ export class Lab5 {
   xoff: number = 0
   yoff: number = 0
   zoff: number = 0
-  constructor() {
-    this.app = document.querySelector('#app')
+  constructor(container: HTMLDivElement) {
+    this.app = container
     this.cvs = document.createElement('canvas')
     this.ctx = this.cvs.getContext('2d')
     this.init()
@@ -73,6 +73,6 @@ export class Lab5 {
     this.drawPerlin()
     this.xoff += 0.005
 
-    window.requestAnimationFrame(this.update)
+    if (!this.terminated) window.requestAnimationFrame(this.update)
   }
 }

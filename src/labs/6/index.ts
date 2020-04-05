@@ -7,6 +7,7 @@ let particleDots
 const forceMap = {}
 
 export class Lab6 {
+  terminated: boolean = false
   app: HTMLDivElement
   cvs: HTMLCanvasElement
   ctx: CanvasRenderingContext2D
@@ -16,8 +17,8 @@ export class Lab6 {
   xoff: number = 0
   yoff: number = 0
   zoff: number = 0
-  constructor() {
-    this.app = document.querySelector('#app')
+  constructor(container: HTMLDivElement) {
+    this.app = container
     this.cvs = document.createElement('canvas')
     this.ctx = this.cvs.getContext('2d')
     this.init()
@@ -28,7 +29,7 @@ export class Lab6 {
     this.cvs.height = this.height
     this.cvs.style.width = '350px'
     this.cvs.style.height = '350px'
-    ;(this.app ? this.app : document.querySelector('body')).appendChild(this.cvs)
+      ; (this.app ? this.app : document.querySelector('body')).appendChild(this.cvs)
 
     this.clear()
     particleDots = new ParticleSystem({
@@ -58,7 +59,7 @@ export class Lab6 {
   }
 
   clear = () => {
-    this.ctx.globalAlpha = 0.2 
+    this.ctx.globalAlpha = 0.2
     this.ctx.fillStyle = '#ffffff'
     this.ctx.fillRect(0, 0, this.width, this.height)
     this.ctx.globalAlpha = 1
@@ -96,6 +97,6 @@ export class Lab6 {
     this.xoff += 0.005
 
     particleDots.update()
-    window.requestAnimationFrame(this.update)
+    if (!this.terminated) window.requestAnimationFrame(this.update)
   }
 }

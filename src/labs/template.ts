@@ -16,6 +16,9 @@ export class ThreeLab {
   pixelRatio: number
   renderSize: number
   uniforms: IUniforms
+  terminated: boolean = false
+
+  animation: () => void
 
   constructor(container: HTMLDivElement) {
     this.container = container

@@ -10,10 +10,11 @@ const ThreeContainer: React.FC<RouteChildrenProps<{ id: string }>> = props => {
 
   React.useEffect(() => {
     const currentLab = new labs[id](labContainer.current);
+    return () => currentLab.terminated = true
   }, [id])
 
   return (
-    id && <div id={id} ref={labContainer}>
+    id && <div ref={labContainer} key={id}>
     </div>
   )
 
