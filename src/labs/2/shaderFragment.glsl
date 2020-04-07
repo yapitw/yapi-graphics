@@ -28,12 +28,16 @@ void main() {
 
   vec3 value = (value1 + value2 + value3 + value4 + value5 + value6 + value7 +
                 value8 + value9) /
-               vec3(9., 9., 9.);
+               vec3(9.0, 9.0, 9.0);
 
-  if (pixelate(position.x, 0.5, 3. * step_x) &&
-      pixelate(position.y, 0.5, 3. * step_y)) {
-    value = vec3(1., 1., 1.);
+  if (pixelate(position.x, 0.5, 2. * step_x) &&
+      pixelate(position.y, 0.5, 2. * step_y)) {
+    value = vec3(0., 0., 0.);
   };
+
+  if (u_time < 2.0) {
+    value = vec3(1., 1., 1.);
+  }
 
   // vec2 st = gl_FragCoord.xy / u_resolution.xy;
   gl_FragColor = vec4(value.x, value.y, value.z, 1.0);
