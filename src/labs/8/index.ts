@@ -1,7 +1,8 @@
 import * as THREE from 'three'
 import { ThreeLab } from "../template"
-export class Lab0 extends ThreeLab {
-  title = "GLSL Basic"
+
+export class Lab8 extends ThreeLab {
+  title = "GLSL Shapes"
 
   constructor(container: HTMLDivElement) {
     super(container)
