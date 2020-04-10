@@ -3,6 +3,7 @@ import { ThreeLab } from "../template"
 
 export class Lab8 extends ThreeLab {
   title = "GLSL Shapes"
+  description = "The principles of painting with maths /n https://www.youtube.com/watch?v=0ifChJ0nJfM"
 
   constructor(container: HTMLDivElement) {
     super(container)
