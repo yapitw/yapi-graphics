@@ -12,7 +12,7 @@ const ThreeContainer: React.FC<RouteChildrenProps<{ id: string }>> = props => {
     return () => lab.terminated = true
   }, [id])
 
-  const { title, description, tags } = labs[id] as labs.ILab
+  const { title, description, tags } = (labs[id] || {}) as labs.ILab
 
   return (
     id
