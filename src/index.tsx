@@ -7,7 +7,7 @@ import MenuList from './components/MenuList';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={location.pathname.replace(/Lab.+/, "")}>
       <div className="app">
         <div className="menu-list">
           <MenuList />
