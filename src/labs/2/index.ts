@@ -9,6 +9,10 @@ interface IUniforms {
 }
 
 export class Lab2 extends ThreeLab {
+ static title = "GLSL Basic"
+ static tags = "glsl three.js"
+ static description = "Calculation on previous screen"
+
   uniforms: IUniforms
   textBuffer1: THREE.WebGLRenderTarget
   textBuffer2: THREE.WebGLRenderTarget

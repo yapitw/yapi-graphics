@@ -13,6 +13,10 @@ interface IUniforms {
 }
 
 export class Lab4 extends ThreeLab {
+ static title = "Reaction Diffusion"
+ static tags = "glsl reaction-diffusion three.js"
+ static description = ""
+
   uniforms: IUniforms
   textBuffer1: THREE.WebGLRenderTarget
   textBuffer2: THREE.WebGLRenderTarget

@@ -13,6 +13,10 @@ body {
 	font-size: 14px;
 }
 
+body {
+	background: rgba(0, 0, 0, 0.05);
+}
+
 a {
 	color: currentColor;
 	text-decoration: none;
@@ -44,7 +48,7 @@ h5 {
 }
 
 .menu-list {
-	flex-basis: 100px;
+	flex-basis: 150px;
 	flex-shrink: 0;
 	flex-grow: 0;
 	display: flex;
@@ -60,20 +64,20 @@ h5 {
 
 	@media (max-width: $break-point) {
 		order: 2;
-		flex-basis: auto;
-
-		// position: absolute;
-		// right: 0;
-		// top: 0;
-		// background: rgba(255, 255, 255, 0.3);
-		// z-index: 2000;
-		// height: 100%;
+		flex-basis: 100px;
+		flex-grow: 1;
+		flex-shrink: 0;
 	}
 }
 
 .content {
 	overflow: auto;
 	flex-grow: 1;
+	padding: 10px;
+
+	h1 {
+		line-height: 24px;
+	}
 
 	canvas {
 		max-width: 100%;
@@ -84,5 +88,8 @@ h5 {
 
 	@media (max-width: $break-point) {
 		flex-grow: 0;
+		canvas {
+			height: 100vw;
+		}
 	}
 }

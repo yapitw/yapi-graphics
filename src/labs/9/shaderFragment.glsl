@@ -11,8 +11,8 @@ vec3 computeColor(vec2 p) {
   p -= 0.5;
   p *= 2.0;
   float r = sqrt(dot(p, p));
-  float a = atan(p.y, p.x) + u_time * 0.01;
-  float s = 0.5 + 0.5 * sin(3.0 * a);
+  float a = atan(p.y, p.x) + u_time * 0.01; // get angle
+  float s = 0.5 + 0.5 * sin(3.0 * a); // 
   float t = 0.15 + 0.35 * pow(s, 0.2);
   t += 0.1 * pow(0.5 + 0.5 * cos(6.0 * a), 0.5);
   float h = r / t;

@@ -1,3 +1,10 @@
+export interface ILab {
+  constructors: (HTMLElement) => void
+  title: string
+  description: string
+  tags: string
+}
+
 export { Lab0 } from './0'
 export { Lab1 } from './1'
 export { Lab2 } from './2'

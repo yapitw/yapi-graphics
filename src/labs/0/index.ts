@@ -1,7 +1,9 @@
 import * as THREE from 'three'
 import { ThreeLab } from "../template"
 export class Lab0 extends ThreeLab {
-  title = "GLSL Basic"
+  static title = "GLSL Texture"
+  static tags = "glsl three.js"
+  static description = ""
 
   constructor(container: HTMLDivElement) {
     super(container)

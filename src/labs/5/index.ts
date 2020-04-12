@@ -3,6 +3,10 @@ import PerlinNoise from '../../libs/PerlinNoise'
 const perlin = new PerlinNoise()
 
 export class Lab5 {
+ static title = "Noise Direction"
+ static tags = "perlin-noise canvas"
+ static description =""
+
   terminated: boolean = false
   app: HTMLDivElement
   cvs: HTMLCanvasElement

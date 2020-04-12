@@ -7,6 +7,10 @@ let particleDots
 const forceMap = {}
 
 export class Lab6 {
+ static title = "Noise Flow"
+ static tags = "perlin-noise canvas"
+ static description = ""
+
   terminated: boolean = false
   app: HTMLDivElement
   cvs: HTMLCanvasElement

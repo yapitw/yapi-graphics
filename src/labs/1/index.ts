@@ -2,6 +2,10 @@ import * as THREE from 'three'
 import { ThreeLab } from "../template"
 
 export class Lab1 extends ThreeLab {
+  static title = "GLSL Texture"
+  static tags = "glsl three.js"
+  static description = ""
+
   mesh: THREE.Mesh
 
   constructor(container: HTMLDivElement) {
