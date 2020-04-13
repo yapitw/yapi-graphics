@@ -2,12 +2,12 @@ import * as THREE from 'three'
 import { ThreeLab } from "../template"
 
 export class Lab8 extends ThreeLab {
- static title = "GLSL Shapes"
- static description =
+  static title = "GLSL Shapes"
+  static description =
     `The principles of painting with maths
-    https://www.youtube.com/watch?v=0ifChJ0nJfM`
+    Learning from <a target="_blank" href="https://www.youtube.com/watch?v=0ifChJ0nJfM">Inigo Quilez</a>`
 
- static tags = "glsl math"
+  static tags = "glsl math"
 
   constructor(container: HTMLDivElement) {
     super(container)

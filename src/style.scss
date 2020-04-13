@@ -19,7 +19,16 @@ body {
 
 a {
 	color: currentColor;
-	text-decoration: none;
+}
+
+* {
+	scrollbar-width: thin;
+	&::-webkit-scrollbar {
+		width: 5px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: rgba(0, 0, 0, 0.1);
+	}
 }
 
 h1,
@@ -52,14 +61,29 @@ h5 {
 
 .menu-list {
 	position: relative;
-	flex-basis: 150px;
+	flex-basis: 200px;
 	height: 100%;
 	flex-shrink: 0;
 	flex-grow: 0;
 	z-index: 20;
+	display: flex;
+	flex-direction: column;
+
+	a {
+		text-decoration: none;
+	}
+
+	.tabs {
+		// position: sticky;
+		// top: 0;
+		display: flex;
+		flex-direction: row;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	}
 
 	.list-wrapper {
-		height: 100%;
+		height: 10px;
+		flex-grow: 1;
 		display: flex;
 		flex-direction: column;
 		overflow-x: visible;
@@ -83,8 +107,15 @@ h5 {
 		justify-content: space-evenly;
 		align-items: center;
 		margin: 10px;
+		padding: 3px;
 		overflow: hidden;
 		border-radius: 4px;
+		position: absolute;
+		right: 100%;
+		background-color: transparent;
+		transition: background-color 300ms ease-in-out;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		box-sizing: border-box;
 
 		&:after,
 		&:before {
@@ -94,26 +125,17 @@ h5 {
 			height: 2px;
 			background-color: rgba(0, 0, 0, 0.6);
 			transition: transform 300ms ease-in-out;
-			transition-delay: 300ms;
 		}
 	}
 
 	@media (max-width: $break-point) {
 		position: absolute;
 		right: 0;
-		height: 100%;
-		overflow: hidden;
-		display: flex;
-		flex-direction: row;
-		transform: translateX(calc(100% - 40px));
-		transition: 300ms ease-in-out;
-		will-change: transform;
+		transform: translateX(100%);
+		background-color: white;
 
 		.switch {
 			display: flex;
-			background-color: transparent;
-			transition: background-color 300ms ease-in-out;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		}
 
 		.list-wrapper {
@@ -123,6 +145,7 @@ h5 {
 
 		&--active {
 			transform: translateX(0);
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
 			.switch {
 				background-color: white;
