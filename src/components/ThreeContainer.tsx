@@ -34,6 +34,10 @@ const ThreeContainer: React.FC<RouteChildrenProps<{ id: string }>> = props => {
           style={{ display: 'flex' }}
         />
         {description && <p dangerouslySetInnerHTML={{ __html: description.replace(/\n/g, "</br>") }}></p>}
+        <p>
+          <span>Source code: </span>
+          <a target="_blank" href="https://github.com/yapitw/yapi-graphics/tree/master/src/labs">GitHub</a>
+        </p>
 
       </React.Fragment>
 

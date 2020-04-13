@@ -25,6 +25,10 @@ const Lecture: React.FC<RouteComponentProps<{ lecture: string }>> = props => {
         <span>Learning from </span>
         <a href="https://www.youtube.com/playlist?list=PLRqwX-V7Uu6ZV4yEcW3uDwOgGXKUUsPOM" target="_blank">The Nature of Code 2</a>
       </p>
+      <p>
+        <span>Source code: </span>
+        <a target="_blank" href="https://github.com/yapitw/yapi-graphics/tree/master/src/natureOfCode">GitHub</a>
+      </p>
     </div >
   )
 
