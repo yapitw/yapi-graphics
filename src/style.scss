@@ -4,31 +4,27 @@ $break-point: 500px;
 
 html,
 body {
-	position: relative;
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	height: 100%;
-	font-family: "open sans", Arial, Helvetica, sans-serif;
-	font-size: 14px;
-}
-
-body {
-	background: rgba(0, 0, 0, 0.05);
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'open sans', Arial, Helvetica, sans-serif;
+    font-size: 14px;
 }
 
 a {
-	color: currentColor;
+    color: currentColor;
 }
 
 * {
-	scrollbar-width: thin;
-	&::-webkit-scrollbar {
-		width: 5px;
-	}
-	&::-webkit-scrollbar-thumb {
-		background-color: rgba(0, 0, 0, 0.1);
-	}
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
 }
 
 h1,
@@ -36,145 +32,145 @@ h2,
 h3,
 h4,
 h5 {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 #root {
-	position: relative;
-	width: 100%;
-	height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .app {
-	position: relative;
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 
-	@media (max-width: $break-point) {
-		flex-direction: column;
-	}
+    @media (max-width: $break-point) {
+        flex-direction: column;
+    }
 }
 
 .menu-list {
-	position: relative;
-	flex-basis: 200px;
-	height: 100%;
-	flex-shrink: 0;
-	flex-grow: 0;
-	z-index: 20;
-	display: flex;
-	flex-direction: column;
+    position: relative;
+    flex-basis: 200px;
+    height: 100%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
 
-	a {
-		text-decoration: none;
-	}
+    a {
+        text-decoration: none;
+    }
 
-	.tabs {
-		// position: sticky;
-		// top: 0;
-		display: flex;
-		flex-direction: row;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-	}
+    .tabs {
+        // position: sticky;
+        // top: 0;
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
 
-	.list-wrapper {
-		height: 10px;
-		flex-grow: 1;
-		display: flex;
-		flex-direction: column;
-		overflow-x: visible;
-		overflow-y: auto;
-	}
+    .list-wrapper {
+        height: 10px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        overflow-x: visible;
+        overflow-y: auto;
+    }
 
-	a {
-		padding: 10px 10px;
-		&.active {
-			font-weight: bold;
-		}
-	}
+    a {
+        padding: 10px 10px;
+        &.active {
+            font-weight: bold;
+        }
+    }
 
-	.switch {
-		display: none;
-		font-size: 40px;
-		width: 1em;
-		height: 1em;
-		z-index: 1;
-		flex-direction: column;
-		justify-content: space-evenly;
-		align-items: center;
-		margin: 10px;
-		padding: 3px;
-		overflow: hidden;
-		border-radius: 4px;
-		position: absolute;
-		right: 100%;
-		background-color: transparent;
-		transition: background-color 300ms ease-in-out;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-		box-sizing: border-box;
+    .switch {
+        display: none;
+        font-size: 40px;
+        width: 1em;
+        height: 1em;
+        z-index: 1;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 10px;
+        padding: 3px;
+        overflow: hidden;
+        border-radius: 4px;
+        position: absolute;
+        right: 100%;
+        background-color: transparent;
+        transition: background-color 300ms ease-in-out;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
 
-		&:after,
-		&:before {
-			content: "";
-			display: block;
-			width: 60%;
-			height: 2px;
-			background-color: rgba(0, 0, 0, 0.6);
-			transition: transform 300ms ease-in-out;
-		}
-	}
+        &:after,
+        &:before {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 2px;
+            background-color: rgba(0, 0, 0, 0.6);
+            transition: transform 300ms ease-in-out;
+        }
+    }
 
-	@media (max-width: $break-point) {
-		position: absolute;
-		right: 0;
-		transform: translateX(100%);
-		background-color: white;
+    @media (max-width: $break-point) {
+        position: absolute;
+        right: 0;
+        transform: translateX(100%);
+        background-color: white;
 
-		.switch {
-			display: flex;
-		}
+        .switch {
+            display: flex;
+        }
 
-		.list-wrapper {
-			width: 200px;
-			background-color: white;
-		}
+        .list-wrapper {
+            width: 200px;
+            background-color: white;
+        }
 
-		&--active {
-			transform: translateX(0);
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        &--active {
+            transform: translateX(0);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-			.switch {
-				background-color: white;
-				&:after,
-				&:before {
-					transform: translateX(100%);
-				}
-			}
-		}
-	}
+            .switch {
+                background-color: white;
+                &:after,
+                &:before {
+                    transform: translateX(100%);
+                }
+            }
+        }
+    }
 }
 
 .content {
-	overflow: auto;
-	flex-grow: 1;
-	padding: 10px;
+    overflow: auto;
+    flex-grow: 1;
+    padding: 10px;
 
-	h1 {
-		// line-height: 24px;
-	}
+    h1 {
+        font-size: 4rem;
+    }
 
-	canvas {
-		max-width: 100%;
-		max-height: 100vh;
-		object-fit: contain;
-		object-position: top;
-	}
+    canvas {
+        max-width: 100%;
+        max-height: 100vh;
+        object-fit: contain;
+        object-position: top;
+    }
 
-	@media (max-width: $break-point) {
-		flex-grow: 0;
-	}
+    @media (max-width: $break-point) {
+        flex-grow: 0;
+    }
 }

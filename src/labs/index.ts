@@ -1,8 +1,8 @@
 export interface ILab {
-  constructors: (HTMLElement) => void
-  title: string
-  description: string
-  tags: string
+    constructors: (HTMLElement) => void
+    title: string
+    description: string
+    tags: string
 }
 
 export { Lab0 } from './0'
