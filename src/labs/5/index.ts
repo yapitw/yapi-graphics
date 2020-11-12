@@ -25,11 +25,9 @@ export class Lab5 {
     }
 
     init = () => {
-        this.cvs.width = this.width
-        this.cvs.height = this.height
-        ;(this.app ? this.app : document.querySelector('body')).appendChild(
-            this.cvs
-        )
+        this.cvs.width = this.width;
+        this.cvs.height = this.height;
+        (this.app ? this.app : document.querySelector('body')).appendChild(this.cvs)
 
         this.draw()
         this.update()
@@ -67,9 +65,8 @@ export class Lab5 {
                 this.ctx.stroke()
 
                 // this.ctx.globalAlpha = 1
-                this.ctx.fillStyle = `rgb(${alpha * 255},${alpha * 255},${
-                    alpha * 255
-                })`
+                this.ctx.fillStyle = `rgb(${alpha * 255},${alpha * 255},${alpha * 255
+                    })`
                 this.ctx.beginPath()
                 this.ctx.arc(
                     (x + 0.5) * this.gridSize,

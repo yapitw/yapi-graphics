@@ -92,7 +92,7 @@ export const lecture0_6 = (s: p5) => {
     const increment = 0.01
 
     s.setup = () => {
-        s.createCanvas(200, 200)
+        s.createCanvas(400, 400)
         s.pixelDensity(1)
     }
 

@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-$break-point: 500px;
+$break-point: 600px;
+$padding-size: 0.8rem;
 
 html,
 body {
@@ -9,7 +10,7 @@ body {
     padding: 0;
     width: 100%;
     height: 100%;
-    font-family: 'open sans', Arial, Helvetica, sans-serif;
+    font-family: roboto, Arial, Helvetica, sans-serif;
     font-size: 14px;
 }
 
@@ -45,13 +46,35 @@ h5 {
 .app {
     position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     overflow: hidden;
+}
 
-    @media (max-width: $break-point) {
-        flex-direction: column;
+.app-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: fit-content;
+    font-size: 2rem;
+    padding: $padding-size;
+
+    a {
+        margin-right: 1em;
+        font-weight: 500;
+        text-decoration: none;
+        text-transform: uppercase;
     }
 }
 
@@ -69,14 +92,6 @@ h5 {
         text-decoration: none;
     }
 
-    .tabs {
-        // position: sticky;
-        // top: 0;
-        display: flex;
-        flex-direction: row;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    }
-
     .list-wrapper {
         height: 10px;
         flex-grow: 1;
@@ -87,7 +102,7 @@ h5 {
     }
 
     a {
-        padding: 10px 10px;
+        padding: $padding-size;
         &.active {
             font-weight: bold;
         }
@@ -127,6 +142,7 @@ h5 {
     @media (max-width: $break-point) {
         position: absolute;
         right: 0;
+        top: 0;
         transform: translateX(100%);
         background-color: white;
 
@@ -157,10 +173,16 @@ h5 {
 .content {
     overflow: auto;
     flex-grow: 1;
-    padding: 10px;
+    padding: $padding-size;
+    width: 1px;
+    max-width: 100%;
+    box-sizing: border-box;
 
     h1 {
         font-size: 4rem;
+    }
+    h2 {
+        font-size: 2rem;
     }
 
     canvas {
@@ -168,9 +190,5 @@ h5 {
         max-height: 100vh;
         object-fit: contain;
         object-position: top;
-    }
-
-    @media (max-width: $break-point) {
-        flex-grow: 0;
     }
 }

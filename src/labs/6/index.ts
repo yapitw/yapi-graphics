@@ -44,7 +44,7 @@ export class Lab6 {
                 y_max: this.cvs.height,
             },
         })
-        particleDots.MAXIUM = 1000
+        particleDots.MAXIMUM = 1000
 
         particleDots.draw = (particle: Particle) => {
             particle.speed.scale(0.95)

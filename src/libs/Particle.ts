@@ -85,7 +85,7 @@ export class ParticleSystem {
     animationRequestID: number
     particles: Particle[]
     time: number
-    MAXIUM: number
+    MAXIMUM: number
     limit: ILimit = {
         x_min: 0,
         y_min: 0,
@@ -93,7 +93,7 @@ export class ParticleSystem {
         y_max: 300,
     }
     constructor({ limit }: { limit: ILimit }) {
-        this.MAXIUM = 50
+        this.MAXIMUM = 50
         if (limit) this.limit = limit
         this.init()
     }
@@ -105,7 +105,7 @@ export class ParticleSystem {
 
     update = () => {
         for (let i = 0; i < 10; i++) {
-            if (this.particles.length < this.MAXIUM) {
+            if (this.particles.length < this.MAXIMUM) {
                 const particle = new Particle({
                     x: random(0, 1) * this.limit.x_max,
                     y: random(0, 1) * this.limit.y_max,

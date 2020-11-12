@@ -43,15 +43,13 @@ export class Lab7 {
                 y_max: this.cvs.height,
             },
         })
-        particleDots.MAXIUM = 2000
+        particleDots.MAXIMUM = 2000
 
         particleDots.draw = (particle: Particle) => {
             particle.speed.scale(0.95)
             particle.velocity =
                 forceMap[
-                    `X${Math.floor(particle.x / this.gridSize)}Y${Math.floor(
-                        particle.y / this.gridSize
-                    )}`
+                `X${Math.floor(particle.x / this.gridSize)}Y${Math.floor(particle.y / this.gridSize)}`
                 ] || new Vec2(0, 0)
 
             this.ctx.globalAlpha = 0.1

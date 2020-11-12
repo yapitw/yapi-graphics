@@ -15,38 +15,39 @@ const ThreeContainer: React.FC<RouteChildrenProps<{ id: string }>> = (
 
     const { title, description, tags } = (labs[id] || {}) as labs.ILab
 
+    if (!id) {
+        return null
+    }
     return (
-        id && (
-            <React.Fragment>
-                <div className="text">
-                    <h1>{title}</h1>
-                    {tags && (
-                        <p>
-                            {tags.split(' ').map((tag, index) => (
-                                <span key={index}>#{tag} </span>
-                            ))}
-                        </p>
-                    )}
-                </div>
-                <div key={id} ref={containerElem} style={{ display: 'flex' }} />
-                {description && (
-                    <p
-                        dangerouslySetInnerHTML={{
-                            __html: description.replace(/\n/g, '</br>'),
-                        }}
-                    ></p>
+        <React.Fragment>
+            <div className="text">
+                <h2>{title}</h2>
+                {tags && (
+                    <p>
+                        {tags.split(' ').map((tag, index) => (
+                            <span key={index}>#{tag} </span>
+                        ))}
+                    </p>
                 )}
-                <p>
-                    <span>Source code: </span>
-                    <a
-                        target="_blank"
-                        href="https://github.com/yapitw/yapi-graphics/tree/master/src/labs"
-                    >
-                        GitHub
-                    </a>
-                </p>
-            </React.Fragment>
-        )
+            </div>
+            <div key={id} ref={containerElem} style={{ display: 'flex' }} />
+            {description && (
+                <p
+                    dangerouslySetInnerHTML={{
+                        __html: description.replace(/\n/g, '</br>'),
+                    }}
+                ></p>
+            )}
+            <p>
+                <span>Source code: </span>
+                <a
+                    target="_blank"
+                    href="https://github.com/yapitw/yapi-graphics/tree/master/src/labs"
+                >
+                    GitHub
+                </a>
+            </p>
+        </React.Fragment>
     )
 }
 

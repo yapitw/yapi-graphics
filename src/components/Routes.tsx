@@ -1,12 +1,14 @@
 import * as React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
+import About from './About'
 import NatureOfCode from './NatureOfCode'
 import ThreeContainer from './ThreeContainer'
 
 const Routes = () => {
     return (
         <Switch>
+            <Route path="/about" component={About} />
             <Route path="/exp/:id" component={ThreeContainer} />
             <Route path={'/noc/:lecture'} component={NatureOfCode} />
 
