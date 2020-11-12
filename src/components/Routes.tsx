@@ -21,7 +21,7 @@ const Routes = () => {
             </Route>
 
             <Route path={'/'}>
-                <Redirect to="/exp/" />
+                <Redirect to="/about" />
             </Route>
         </Switch>
     )
