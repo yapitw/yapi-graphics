@@ -2,10 +2,68 @@ import * as React from 'react'
 import './about.scss'
 
 const About = () => {
+    const skills = (
+        <div className="block">
+            <h1 className="first-title">Tools I use</h1>
+            <div style={{ columnCount: 2, columnGap: '2rem' }}>
+                <section>
+                    <h3 className="subtitle">Javascript:</h3>
+                    <p>
+                        Vanilla JS, ES6, TypeScript, node.js and npm, HTML5
+                        Canvas API
+                    </p>
+                </section>
+                <section>
+                    <h3 className="subtitle">JS frameworks / libraries</h3>
+                    <p>
+                        React, Vue, Webpack, Gulp, Three.js, P5.js, D3.js,
+                        Express, Jest, React Testing Library, emscripten
+                    </p>
+                </section>
+                <section>
+                    <h3 className="subtitle">HTML</h3>
+                    <p>PUG template, SVG graphics</p>
+                </section>
+                <section>
+                    <h3 className="subtitle">CSS</h3>
+                    <p>SCSS pre-processing, BEM naming style, Functional CSS</p>
+                </section>
+                <section>
+                    <h3 className="subtitle">SCM</h3>
+                    <p>Git</p>
+                </section>
+                <section>
+                    <h3 className="subtitle">Other Languages</h3>
+                    <p>In touch with python, C, C++, GLSL</p>
+                </section>
+                <section>
+                    <h3 className="subtitle">3D Graphics</h3>
+                    <p>Blender, Rhinoceros with Grasshopper, ZBrush, Houdini</p>
+                </section>
+                <section>
+                    <h3 className="subtitle">2D Graphics</h3>
+                    <p>Photoshop, Illustrator</p>
+                </section>
+            </div>
+        </div>
+    )
+
     return (
         <div className="about">
             <section>
-                <h1>Pattison Ho</h1>
+                <h1>
+                    Pattison Ho
+                    <span
+                        style={{
+                            fontSize: '1.2rem',
+                            letterSpacing: 0,
+                            fontWeight: 300,
+                            marginLeft: '1em',
+                        }}
+                    >
+                        何俊憙 (Ho Chun Hsi)
+                    </span>
+                </h1>
                 <h3>
                     Front-end developer with deep design know-how and
                     visualization techniques.
@@ -13,28 +71,20 @@ const About = () => {
             </section>
 
             <section>
-                <h1 className="first-title" id="profile">
-                    Profile
-                </h1>
                 <h3 className="subtitle">Language: </h3>
                 <ul>
                     <li>Chinese: Native speaker</li>
                     <li>English: Communication level</li>
                 </ul>
 
+                <h3 className="subtitle">Web accounts</h3>
                 <ul>
                     <li>
-                        E-mail:
+                        E-mail:{' '}
                         <a href="mailto:yapi.tw@gmail.com" target="_blank">
                             yapi.tw@gmail.com
                         </a>
                     </li>
-                    <li>Mobile SG: +65-8249-1912</li>
-                    <li>Mobile TW: +886-920-774-720</li>
-                </ul>
-
-                <h3 className="subtitle">Web accounts</h3>
-                <ul>
                     <li>
                         GitHub:{' '}
                         <a href="https://github.com/yapitw/" target="_blank">
@@ -55,16 +105,14 @@ const About = () => {
                     <h1 className="first-title">Core skills</h1>
                     <h3 className="subtitle">Front-end Development</h3>
                     <ul>
+                        <li>Build front-end projects from scratch.</li>
                         <li>
-                            Construct npm environment for frontend projects.
+                            Integration of web APIs and services including AWS,
+                            FB SDK and GCP ...etc.
                         </li>
                         <li>
-                            Usage of web APIs and services including AWS, FB SDK
-                            and GCP ...etc.
-                        </li>
-                        <li>
-                            Well and smooth communication with designer and
-                            product manager.
+                            Good communication with designer and product
+                            manager.
                         </li>
                         <li>Back-end development (Node.js).</li>
                         <li>3D Computer graphics fundamental.</li>
@@ -76,60 +124,7 @@ const About = () => {
                 </div>
             </section>
 
-            <section>
-                <div className="block">
-                    <h1 className="first-title">Tools I use</h1>
-                    <div style={{ columnCount: 2, columnGap: '2rem' }}>
-                        <section>
-                            <h3 className="subtitle">Javascript:</h3>
-                            <p>
-                                Vanilla JS, ES6, TypeScript, node.js and npm,
-                                HTML5 Canvas API
-                            </p>
-                        </section>
-                        <section>
-                            <h3 className="subtitle">
-                                JS frameworks / libraries
-                            </h3>
-                            <p>
-                                React, Vue, Webpack, Gulp, Three.js, P5.js,
-                                D3.js, Express, Jest, React Testing Library,
-                                emscripten
-                            </p>
-                        </section>
-                        <section>
-                            <h3 className="subtitle">HTML</h3>
-                            <p>PUG template, SVG graphics</p>
-                        </section>
-                        <section>
-                            <h3 className="subtitle">CSS</h3>
-                            <p>
-                                SCSS pre-processing, BEM naming style,
-                                Functional CSS
-                            </p>
-                        </section>
-                        <section>
-                            <h3 className="subtitle">SCM</h3>
-                            <p>Git</p>
-                        </section>
-                        <section>
-                            <h3 className="subtitle">Other Languages</h3>
-                            <p>In touch with python, C, C++, GLSL</p>
-                        </section>
-                        <section>
-                            <h3 className="subtitle">3D Graphics</h3>
-                            <p>
-                                Blender, Rhinoceros with Grasshopper, ZBrush,
-                                Houdini
-                            </p>
-                        </section>
-                        <section>
-                            <h3 className="subtitle">2D Graphics</h3>
-                            <p>Photoshop, Illustrator</p>
-                        </section>
-                    </div>
-                </div>
-            </section>
+            <section className="no-print">{skills}</section>
 
             <section>
                 <div className="block">
@@ -227,28 +222,24 @@ const About = () => {
                     <h3 className="subtitle">
                         Industrial Design Bachelor degree
                     </h3>
-                    <ul>
-                        <li>National Taipei University of Technology.</li>
-                    </ul>
+                    <p>National Taipei University of Technology.</p>
                     <h3 className="subtitle">
                         Advanced Javascript front-end engineering course
                     </h3>
-                    <ul>
-                        <li>
-                            Information System Training Program from National
-                            Taiwan University.
-                        </li>
-                    </ul>
+                    <p>
+                        Information System Training Program from National Taiwan
+                        University.
+                    </p>
                     <h3 className="subtitle">Self learning</h3>
-                    <ul>
-                        <li>
-                            Learning front-end programming skills and 3D
-                            softwares from several online sources like Udemy,
-                            Udacity, Codecademy, Hahow, Hiskio, Youtube ...ETC.
-                        </li>
-                    </ul>
+                    <p>
+                        Learning front-end programming skills and 3D softwares
+                        from several online sources like Udemy, Udacity,
+                        Codecademy, Hahow, Hiskio, Youtube ...ETC.
+                    </p>
                 </div>
             </section>
+
+            <section className="only-print">{skills}</section>
         </div>
     )
 }

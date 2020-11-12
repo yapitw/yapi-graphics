@@ -6,6 +6,10 @@
         column-count: 1;
     }
 
+    @media print {
+        column-count: 1;
+    }
+
     ul {
         padding-inline-start: 1.5rem;
     }

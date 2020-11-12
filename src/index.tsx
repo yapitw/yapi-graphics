@@ -14,8 +14,8 @@ const App: React.FC = () => {
                 <div className="tabs">
                     <div className="container">
                         <NavLink to="/about">About</NavLink>
-                        <NavLink to="/exp/">Exp.</NavLink>
-                        <NavLink to="/noc/">NOC</NavLink>
+                        <NavLink to="/exp/">Studies(Graphics)</NavLink>
+                        <NavLink to="/noc/">Studies(Natural of code)</NavLink>
                     </div>
                 </div>
                 <div className="app-body">

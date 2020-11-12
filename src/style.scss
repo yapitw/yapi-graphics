@@ -65,6 +65,10 @@ h4 {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    @media print {
+        height: fit-content;
+        overflow: auto;
+    }
 }
 
 .container {
@@ -77,6 +81,10 @@ h4 {
     height: 1px;
     flex-grow: 1;
 
+    @media print {
+        height: fit-content;
+    }
+
     .container {
         display: flex;
         flex-direction: row;
@@ -84,6 +92,9 @@ h4 {
         width: 100%;
         height: 100%;
         overflow: auto;
+        @media print {
+            height: fit-content;
+        }
     }
 }
 
@@ -103,6 +114,10 @@ h4 {
         font-weight: 300;
         text-decoration: none;
         text-transform: uppercase;
+    }
+
+    @media print {
+        display: none;
     }
 }
 
@@ -212,5 +227,18 @@ h4 {
         max-height: 100vh;
         object-fit: contain;
         object-position: top;
+    }
+}
+
+.no-print {
+    @media print {
+        display: none;
+    }
+}
+
+.only-print {
+    display: none;
+    @media print {
+        display: block;
     }
 }
