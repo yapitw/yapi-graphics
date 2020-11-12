@@ -4,7 +4,7 @@ import { ThreeLab } from '../template'
 export class Lab8 extends ThreeLab {
     static title = 'GLSL Shapes'
     static description = `The principles of painting with maths
-    Learning from <a target="_blank" href="https://www.youtube.com/watch?v=0ifChJ0nJfM">Inigo Quilez</a>`
+    Practice according to <a target="_blank" href="https://www.youtube.com/watch?v=0ifChJ0nJfM">Inigo Quilez</a>`
 
     static tags = 'glsl math'
 

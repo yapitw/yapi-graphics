@@ -12,33 +12,37 @@ const App: React.FC = () => {
         <HashRouter hashType="noslash">
             <div className="app">
                 <div className="tabs">
-                    <NavLink to="/about">About</NavLink>
-                    <NavLink to="/exp/">Exp.</NavLink>
-                    <NavLink to="/noc/">NOC</NavLink>
+                    <div className="container">
+                        <NavLink to="/about">About</NavLink>
+                        <NavLink to="/exp/">Exp.</NavLink>
+                        <NavLink to="/noc/">NOC</NavLink>
+                    </div>
                 </div>
                 <div className="app-body">
-                    <Route path={['/exp/', '/noc/']}>
-                        <div
-                            className={`menu-list ${
-                                isMenuShow ? 'menu-list--active' : ''
-                            }`}
-                        >
+                    <div className="container">
+                        <Route path={['/exp/', '/noc/']}>
                             <div
-                                className="switch"
-                                onClick={() => setIsMenuShow(!isMenuShow)}
-                            />
-
-                            <div
-                                className="list-wrapper"
-                                onClick={() => setIsMenuShow(false)}
+                                className={`menu-list ${
+                                    isMenuShow ? 'menu-list--active' : ''
+                                }`}
                             >
-                                <MenuList />
-                            </div>
-                        </div>
-                    </Route>
+                                <div
+                                    className="switch"
+                                    onClick={() => setIsMenuShow(!isMenuShow)}
+                                />
 
-                    <div className="content">
-                        <Routes />
+                                <div
+                                    className="list-wrapper"
+                                    onClick={() => setIsMenuShow(false)}
+                                >
+                                    <MenuList />
+                                </div>
+                            </div>
+                        </Route>
+
+                        <div className="content">
+                            <Routes />
+                        </div>
                     </div>
                 </div>
             </div>

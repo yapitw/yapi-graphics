@@ -21,7 +21,7 @@ const ThreeContainer: React.FC<RouteChildrenProps<{ id: string }>> = (
     return (
         <React.Fragment>
             <div className="text">
-                <h2>{title}</h2>
+                <h1>{title}</h1>
                 {tags && (
                     <p>
                         {tags.split(' ').map((tag, index) => (

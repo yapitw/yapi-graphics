@@ -1,0 +1,32 @@
+.about {
+    column-count: 2;
+    column-gap: 2rem;
+
+    @media screen and (max-width: 768px) {
+        column-count: 1;
+    }
+
+    ul {
+        padding-inline-start: 1.5rem;
+    }
+
+    span,
+    p,
+    li {
+        line-height: 1.5;
+    }
+
+    section {
+        break-inside: avoid;
+        margin-bottom: 2rem;
+    }
+
+    > section {
+        max-width: 500px;
+        margin-bottom: 3rem;
+    }
+
+    p {
+        line-height: 1.5em;
+    }
+}

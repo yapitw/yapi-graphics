@@ -18,11 +18,11 @@ const Lecture: React.FC<RouteComponentProps<{ lecture: string }>> = (props) => {
 
     return (
         <div className="text">
-            <h2>The Nature of Code</h2>
+            <h1>The Nature of Code</h1>
             <p>{title}</p>
             <div ref={canvasElem} key={lecture}></div>
             <p>
-                <span>Learning from </span>
+                <span>Practice according to </span>
                 <a
                     href="https://www.youtube.com/playlist?list=PLRqwX-V7Uu6ZV4yEcW3uDwOgGXKUUsPOM"
                     target="_blank"
