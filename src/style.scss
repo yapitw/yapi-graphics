@@ -102,6 +102,7 @@ h4 {
     .container {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         border-bottom: 1px solid currentColor;
         width: 100%;
         height: fit-content;
