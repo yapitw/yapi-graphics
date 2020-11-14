@@ -32,7 +32,7 @@ export class Lab6 {
         this.cvs.width = this.width
         this.cvs.height = this.height
         this.cvs.style.width = '500px'
-        this.cvs.style.height = '500px'
+        this.cvs.style.maxHeight = '500px'
         this.app.appendChild(this.cvs)
 
         this.clear()

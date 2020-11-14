@@ -18,19 +18,9 @@ const About = () => {
     )
 
     return (
-        <div className="about">
+        <div className="about two-column">
             <section className="primary">
-                <h1>
-                    Pattison Ho
-                    <span
-                        style={{
-                            fontSize: '1.2rem',
-                            letterSpacing: 0,
-                            fontWeight: 300,
-                            marginLeft: '1em',
-                        }}
-                    ></span>
-                </h1>
+                <h1>Pattison Ho</h1>
                 <h3>
                     Front-end developer with deep design know-how and
                     visualization techniques.

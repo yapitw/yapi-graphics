@@ -1,8 +1,9 @@
 import * as React from 'react'
 import ReactDOM from 'react-dom'
-import { HashRouter, NavLink, Route } from 'react-router-dom'
+import { HashRouter, Route } from 'react-router-dom'
 
 import MenuList from './components/MenuList'
+import Navigator from './components/Navigator'
 import Routes from './components/Routes'
 
 const App: React.FC = () => {
@@ -11,21 +12,18 @@ const App: React.FC = () => {
     return (
         <HashRouter hashType="noslash">
             <div className="app">
-                <div className="tabs">
-                    <div className="container">
-                        <NavLink to="/about">About</NavLink>
-                        Studies:
-                        <NavLink to="/exp/">Graphics</NavLink>
-                        <NavLink to="/noc/">Natural of code</NavLink>
-                    </div>
-                </div>
+                <Navigator />
                 <div className="app-body">
                     <div className="container">
+                        <div id="top-anchor" />
                         <Route path={['/exp/', '/noc/']}>
                             <div
-                                className={`menu-list ${
-                                    isMenuShow ? 'menu-list--active' : ''
-                                }`}
+                                className={[
+                                    'menu-list',
+                                    isMenuShow && 'menu-list--active',
+                                ]
+                                    .filter(Boolean)
+                                    .join(' ')}
                             >
                                 <div
                                     className="switch"

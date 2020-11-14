@@ -1,0 +1,54 @@
+@import '../shared.scss';
+
+.tabs {
+    .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-bottom: 1px solid currentColor;
+        width: 100%;
+        height: fit-content;
+        padding: $padding-size;
+    }
+
+    a {
+        font-size: 2rem;
+        margin-right: 0.5rem;
+        padding: 0 0.5rem;
+        font-weight: 300;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .active-link {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    h4 {
+        margin-right: 0.5rem;
+    }
+
+    .splitter {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .pipe {
+        @media screen and (max-width: $break-point) {
+            display: none;
+        }
+    }
+
+    @media print {
+        display: none;
+    }
+
+    @media screen and (max-width: $break-point) {
+        order: 1;
+        .container {
+            border-bottom: none;
+            border-top: 1px solid currentColor;
+            flex-direction: column;
+        }
+    }
+}
