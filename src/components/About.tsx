@@ -25,6 +25,11 @@ const About = () => {
                     Front-end developer with deep design know-how and
                     visualization techniques.
                 </h3>
+                <p className="print-remarks">
+                    This document is printed from{' '}
+                    <a href={location.origin}>{location.origin}</a>, see more my
+                    works in here.
+                </p>
             </section>
 
             <section className="primary">

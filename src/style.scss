@@ -269,3 +269,11 @@ p {
         column-count: 2;
     }
 }
+
+.print-remarks {
+    display: none;
+
+    @media print {
+        display: block;
+    }
+}
