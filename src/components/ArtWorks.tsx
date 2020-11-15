@@ -20,27 +20,35 @@ const images3D = [
     require('../images/3d09.png'),
     require('../images/3d10.png'),
 ]
-const webWorkData: {
-    title: string
-    link: string
-    sourceCode?: string
-    image: string
-    contents: string[]
-}[] = []
 
 const ArtWorks = () => {
+    const [viewerSrc, setViewerSrc] = React.useState('')
+    const [isViewerVisible, setViewerVisible] = React.useState(false)
+
+    const setViewer = (src: string) => {
+        setViewerSrc(src)
+        setViewerVisible(true)
+    }
+
     return (
         <div className="art-works">
             <h1 className="first-title">Art Works</h1>
             <p>
-                For hobby. 2D paints are done with Photoshop. 3D models are
-                done with Blender and Zbrush.
+                For hobby. 2D paints are done with Photoshop. 3D models are done
+                with Blender and ZBrush.
             </p>
             <section>
                 <h2>2D Painting</h2>
                 <div className="three-column">
                     {images2D.map((image, index) => {
-                        return <img src={image} alt="" key={index} />
+                        return (
+                            <img
+                                key={index}
+                                src={image}
+                                onClick={() => setViewer(image)}
+                                alt=""
+                            />
+                        )
                     })}
                 </div>
             </section>
@@ -48,10 +56,23 @@ const ArtWorks = () => {
                 <h2>3D Modeling</h2>
                 <div className="three-column">
                     {images3D.map((image, index) => {
-                        return <img src={image} alt="" key={index} />
+                        return (
+                            <img
+                                key={index}
+                                src={image}
+                                onClick={() => setViewer(image)}
+                                alt=""
+                            />
+                        )
                     })}
                 </div>
             </section>
+            <div
+                className={`image-viewer ${isViewerVisible ? 'show' : 'hide'}`}
+                onClick={() => setViewerVisible(false)}
+            >
+                <img src={viewerSrc} alt="" />
+            </div>
         </div>
     )
 }

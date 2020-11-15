@@ -18,7 +18,7 @@ export const skillsData: { title: string, content: string }[] = [
         content: 'SCSS pre-processing, BEM naming style, Functional CSS',
     },
     {
-        title: 'SCM',
+        title: 'Version Control',
         content: 'git',
     },
     {
