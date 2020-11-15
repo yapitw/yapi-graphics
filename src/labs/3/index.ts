@@ -40,7 +40,7 @@ export class Lab3 extends ThreeLab {
         camera.position.set(1, 1, 1)
         camera.lookAt(0, 0, 0)
 
-        this.canvas = document.querySelector('canvas')
+        this.canvas = this.container.querySelector('canvas')
         this.canvas.style.filter =
             'saturate(0) brightness(1.2) contrast(2) invert(1)'
         const geometry = new THREE.PlaneBufferGeometry(2, 2)
@@ -93,6 +93,7 @@ export class Lab3 extends ThreeLab {
     }
 
     animation = () => {
+        if (!this.playing) return;
         const { scene, camera, renderer } = this
         for (let i = 0; i < 24; i++) {
             this.uniforms.u_texture.value = this[

@@ -1,4 +1,5 @@
 import PerlinNoise from '../../libs/PerlinNoise'
+import { P5Lab } from '../template'
 import { ParticleSystem, Particle, Vec2 } from './Particle'
 
 const perlin = new PerlinNoise()
@@ -6,7 +7,7 @@ const perlin = new PerlinNoise()
 let particleDots
 const forceMap = {}
 
-export class Lab7 {
+export class Lab7 extends P5Lab {
     static title = 'Noise Pace'
     static tags = 'perlin-noise canvas'
     static description = ''
@@ -23,6 +24,7 @@ export class Lab7 {
     zoff: number = 0
 
     constructor(container: HTMLDivElement) {
+        super()
         this.app = container
         this.cvs = document.createElement('canvas')
         this.ctx = this.cvs.getContext('2d')
@@ -87,6 +89,7 @@ export class Lab7 {
     }
 
     update = () => {
+        if (!this.playing) return
         // this.clear()
         this.drawPerlin()
         this.xoff += 0.002

@@ -41,7 +41,7 @@ export class Lab4 extends ThreeLab {
         camera.position.set(1, 1, 1)
         camera.lookAt(0, 0, 0)
 
-        this.canvas = document.querySelector('canvas')
+        this.canvas = this.container.querySelector('canvas')
         this.canvas.style.filter =
             'saturate(0) brightness(1.2) contrast(2) invert(1)'
         const geometry = new THREE.PlaneBufferGeometry(2, 2)
@@ -101,11 +101,14 @@ export class Lab4 extends ThreeLab {
 
         const moveHandler = (e) => {
             e.preventDefault()
+            const boundingRect = this.container.getBoundingClientRect()
             const x =
-                (e.pageX - this.container.offsetLeft) / this.canvas.clientWidth
+                (e.pageX - boundingRect.left) / this.canvas.clientWidth
             const y =
                 1 -
-                (e.pageY - this.container.offsetTop) / this.canvas.clientHeight
+                (e.pageY - boundingRect.top) / this.canvas.clientHeight
+
+            console.log({ x, y, e: e.pageY })
             this.uniforms.u_mouse.value.x = x
             this.uniforms.u_mouse.value.y = y
         }
@@ -171,6 +174,7 @@ export class Lab4 extends ThreeLab {
     }
 
     animation = () => {
+        if (!this.playing) return;
         const { scene, camera, renderer } = this
         for (let i = 0; i < 4; i++) {
             const textBuffer = this.switchTag ? 'textBuffer1' : 'textBuffer2'

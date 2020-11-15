@@ -22,7 +22,7 @@ export class Lab9 extends ThreeLab {
 
         camera.position.set(1, 1, 1)
         camera.lookAt(0, 0, 0)
-        this.canvas = document.querySelector('canvas')
+        this.canvas = this.container.querySelector('canvas')
 
         const geometry = new THREE.PlaneBufferGeometry(2, 2)
         this.uniforms = {
@@ -47,6 +47,7 @@ export class Lab9 extends ThreeLab {
         scene.add(mesh)
     }
     animation = () => {
+        if (!this.playing) return;
         const { scene, camera, renderer } = this
         this.uniforms.u_time.value += 1
         renderer.render(scene, camera)

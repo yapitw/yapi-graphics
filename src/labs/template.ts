@@ -17,7 +17,7 @@ export class ThreeLab {
     renderSize: number = 512
     uniforms: IUniforms
     terminated: boolean = false
-
+    playing: boolean = true
     animation: () => void
 
     constructor(container: HTMLDivElement) {
@@ -26,5 +26,32 @@ export class ThreeLab {
         this.camera = new THREE.OrthographicCamera(-2, 2, -2, 2)
         this.renderer = new THREE.WebGLRenderer({ alpha: true })
         this.container.appendChild(this.renderer.domElement)
+    }
+
+    pause = () => {
+        if (!this.playing) return
+        this.playing = false;
+    }
+    resume = () => {
+        if (this.playing) return
+        this.playing = true;
+        this.animation();
+    }
+}
+
+
+export class P5Lab {
+    playing: boolean = true
+    update: () => void
+
+    pause = () => {
+        if (!this.playing) return
+        this.playing = false
+    }
+
+    resume = () => {
+        if (this.playing) return
+        this.playing = true
+        this.update()
     }
 }

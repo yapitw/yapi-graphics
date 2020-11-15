@@ -1,8 +1,9 @@
 import PerlinNoise from '../../libs/PerlinNoise'
+import { P5Lab } from '../template'
 
 const perlin = new PerlinNoise()
 
-export class Lab5 {
+export class Lab5 extends P5Lab {
     static title = 'Noise Direction'
     static tags = 'perlin-noise canvas'
     static description = ''
@@ -17,7 +18,9 @@ export class Lab5 {
     xoff: number = 0
     yoff: number = 0
     zoff: number = 0
+
     constructor(container: HTMLDivElement) {
+        super()
         this.app = container
         this.cvs = document.createElement('canvas')
         this.ctx = this.cvs.getContext('2d')
@@ -81,6 +84,7 @@ export class Lab5 {
     }
 
     update = () => {
+        if (!this.playing) return
         this.draw()
         this.drawPerlin()
         this.xoff += 0.005

@@ -39,7 +39,7 @@ const App: React.FC = () => {
                             </div>
                         </Route>
 
-                        <div className="content">
+                        <div className="content" id="scrollContainer">
                             <Routes />
                         </div>
                     </div>

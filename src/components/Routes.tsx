@@ -3,9 +3,9 @@ import { Switch, Route, Redirect, useHistory } from 'react-router-dom'
 
 import About from './About'
 import NatureOfCode from './NatureOfCode'
-import ThreeContainer from './ThreeContainer'
 import WebWorks from './WebWorks'
 import ArtWorks from './ArtWorks'
+import Experiments from './Experiments'
 
 const Routes = () => {
     const history = useHistory()
@@ -14,7 +14,6 @@ const Routes = () => {
     } = history
 
     React.useEffect(() => {
-        console.log(pathname)
         document.getElementById('top-anchor').scrollIntoView()
     }, [pathname])
     return (
@@ -22,12 +21,8 @@ const Routes = () => {
             <Route path="/about" component={About} />
             <Route path="/web" component={WebWorks} />
             <Route path="/art" component={ArtWorks} />
-            <Route path="/exp/:id" component={ThreeContainer} />
+            <Route path="/exp/:id?" component={Experiments} />
             <Route path={'/noc/:lecture'} component={NatureOfCode} />
-
-            <Route path={'/exp/'}>
-                <Redirect to="/exp/Lab6" />
-            </Route>
 
             <Route path={'/noc/'}>
                 <Redirect to="/noc/lecture1_7" />

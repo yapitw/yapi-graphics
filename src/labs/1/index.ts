@@ -22,7 +22,7 @@ export class Lab1 extends ThreeLab {
 
         camera.position.set(1, 1, 1)
         camera.lookAt(0, 0, 0)
-        this.canvas = document.querySelector('canvas')
+        this.canvas = this.container.querySelector('canvas')
 
         this.uniforms = { u_time: { type: 'f', value: 1.0 } }
 
@@ -50,6 +50,7 @@ export class Lab1 extends ThreeLab {
     }
 
     animation = () => {
+        if (!this.playing) return;
         const { scene, camera, renderer } = this
         this.uniforms.u_time.value += 0.005
         renderer.render(scene, camera)
