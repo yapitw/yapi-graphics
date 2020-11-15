@@ -1,6 +1,6 @@
 export const skillsData: { title: string, content: string }[] = [
     {
-        title: 'Javascript:',
+        title: 'Javascript',
         content:
             'Vanilla JS, ES6, TypeScript, node.js and npm, HTML5 Canvas API',
     },

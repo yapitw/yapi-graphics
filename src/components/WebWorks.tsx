@@ -58,11 +58,11 @@ const webWorkData: {
 const WebWorks = () => {
     return (
         <>
-            <h1 className="first-title"> Works</h1>
+            <h1 className="first-title">Web Works</h1>
             <div className="web-works two-column">
-                {webWorkData.map((work) => {
+                {webWorkData.map((work, index) => {
                     return (
-                        <section className="primary">
+                        <section className="primary" key={index}>
                             <a href={work.link} target="_blank">
                                 <img src={work.image} />
                             </a>
@@ -85,12 +85,12 @@ const WebWorks = () => {
                                     <br />
                                     {work.contents.map((content, index) => {
                                         return (
-                                            <>
+                                            <React.Fragment key={index}>
                                                 <span key={index}>
                                                     {content}
                                                 </span>
                                                 <br />
-                                            </>
+                                            </React.Fragment>
                                         )
                                     })}
                                 </p>

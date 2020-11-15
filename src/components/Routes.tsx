@@ -5,6 +5,7 @@ import About from './About'
 import NatureOfCode from './NatureOfCode'
 import ThreeContainer from './ThreeContainer'
 import WebWorks from './WebWorks'
+import ArtWorks from './ArtWorks'
 
 const Routes = () => {
     const history = useHistory()
@@ -19,7 +20,8 @@ const Routes = () => {
     return (
         <Switch>
             <Route path="/about" component={About} />
-            <Route path="/webWorks" component={WebWorks} />
+            <Route path="/web" component={WebWorks} />
+            <Route path="/art" component={ArtWorks} />
             <Route path="/exp/:id" component={ThreeContainer} />
             <Route path={'/noc/:lecture'} component={NatureOfCode} />
 

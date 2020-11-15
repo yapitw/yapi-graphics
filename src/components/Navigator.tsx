@@ -11,7 +11,7 @@ const Navigator = () => {
                 </NavLink>
                 <div className="splitter" />
                 <h4>Works:</h4>
-                <NavLink activeClassName="active-link" to="/webWorks">
+                <NavLink activeClassName="active-link" to="/web">
                     Web
                 </NavLink>
                 <h4 className="pipe">|</h4>
