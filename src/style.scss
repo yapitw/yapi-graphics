@@ -166,7 +166,6 @@ p {
         margin: 10px;
         padding: 3px;
         overflow: hidden;
-        border-radius: 4px;
         position: absolute;
         right: 100%;
         background-color: transparent;
@@ -186,7 +185,7 @@ p {
     }
 
     @media (max-width: $break-point) {
-        position: absolute;
+        position: fixed;
         right: 0;
         top: 0;
         transform: translateX(100%);
@@ -226,6 +225,7 @@ p {
     overflow: auto;
 
     canvas {
+        height: auto !important;
         max-width: 100%;
         max-height: 100vh;
         object-fit: contain;

@@ -21,8 +21,12 @@ const Routes = () => {
             <Route path="/about" component={About} />
             <Route path="/web" component={WebWorks} />
             <Route path="/art" component={ArtWorks} />
-            <Route path="/exp/:id?" component={Experiments} />
+            <Route path="/exp/:id" component={Experiments} />
             <Route path={'/noc/:lecture'} component={NatureOfCode} />
+
+            <Route path={'/exp/'}>
+                <Redirect to="/exp/Lab6" />
+            </Route>
 
             <Route path={'/noc/'}>
                 <Redirect to="/noc/lecture1_7" />

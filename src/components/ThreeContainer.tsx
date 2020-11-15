@@ -16,7 +16,7 @@ const ThreeContainer: React.FC<{ id: string }> = (props) => {
     }, [id])
 
     React.useEffect(() => {
-        const scrollContainer = document.getElementById('scrollContainer')
+        const scrollContainer = findScrollParent(containerElem.current)
         const scrollEvent = () => {
             const boundingRect = containerElem.current?.getBoundingClientRect()
             if (
@@ -73,3 +73,14 @@ const ThreeContainer: React.FC<{ id: string }> = (props) => {
 }
 
 export default ThreeContainer
+
+function findScrollParent(elem: HTMLElement) {
+    let scrollParent = elem.parentElement
+    while (
+        scrollParent &&
+        scrollParent.scrollHeight <= scrollParent.clientHeight
+    ) {
+        scrollParent = scrollParent.parentElement
+    }
+    return scrollParent
+}

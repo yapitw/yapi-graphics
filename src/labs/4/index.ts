@@ -108,7 +108,6 @@ export class Lab4 extends ThreeLab {
                 1 -
                 (e.pageY - boundingRect.top) / this.canvas.clientHeight
 
-            console.log({ x, y, e: e.pageY })
             this.uniforms.u_mouse.value.x = x
             this.uniforms.u_mouse.value.y = y
         }
