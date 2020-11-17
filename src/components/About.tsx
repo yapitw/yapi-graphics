@@ -68,7 +68,7 @@ const About = () => {
                     <li>Integration of web APIs and services including AWS, FB SDK and GCP ...etc.</li>
                     <li>Good communication with designer and product manager.</li>
                     <li>Advanced CSS styles implementation.</li>
-                    <li>Progressive graphics coding</li>
+                    <li>Progressive graphics coding.</li>
                     <li>3D Computer graphics fundamental.</li>
                     <li>Back-end development (Node.js).</li>
                 </ul>
