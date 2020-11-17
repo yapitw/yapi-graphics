@@ -14,10 +14,6 @@ const Navigator = () => {
                 <NavLink activeClassName="active-link" to="/web">
                     Web
                 </NavLink>
-                <h4 className="pipe">|</h4>
-                <NavLink activeClassName="active-link" to="/art">
-                    Art
-                </NavLink>
                 <div className="splitter" />
                 <h4>Studies:</h4>
                 <NavLink activeClassName="active-link" to="/exp/">
@@ -26,6 +22,10 @@ const Navigator = () => {
                 <h4 className="pipe">|</h4>
                 <NavLink activeClassName="active-link" to="/noc/">
                     Natural of code
+                </NavLink>
+                <h4 className="pipe">|</h4>
+                <NavLink activeClassName="active-link" to="/art">
+                    Art
                 </NavLink>
             </div>
         </div>

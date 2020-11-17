@@ -27,10 +27,10 @@ const About = () => {
                     This document is printed from <a href={location.origin}>{location.origin}</a>, see more my works
                     here.
                 </p>
-            </section>
 
-            <section className="primary">
-                <h3 className="subtitle">Language: </h3>
+                <h3 className="subtitle" style={{ marginTop: '1rem' }}>
+                    Language:{' '}
+                </h3>
                 <ul>
                     <li>Chinese: Native speaker</li>
                     <li>English: Communication level</li>
