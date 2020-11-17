@@ -21,9 +21,10 @@ const About = () => {
         <div className="about two-column">
             <section className="primary">
                 <h1>Pattison Ho</h1>
-                <h3>Front-end developer with deep design know-how and visualization techniques.</h3>
+                <h3>何俊憙 (Ho Chun Hsi)</h3>
+                <h3>Front-end developer with design background and visualization techniques.</h3>
                 <p className="print-remarks">
-                    This document is printed from <a href={location.origin}>{location.origin}</a>, see more my works in
+                    This document is printed from <a href={location.origin}>{location.origin}</a>, see more my works
                     here.
                 </p>
             </section>
@@ -35,7 +36,7 @@ const About = () => {
                     <li>English: Communication level</li>
                 </ul>
 
-                <h3 className="subtitle">Web accounts</h3>
+                <h3 className="subtitle">Contacts</h3>
                 <ul>
                     <li>
                         E-mail:{' '}
@@ -43,6 +44,7 @@ const About = () => {
                             yapi.tw@gmail.com
                         </a>
                     </li>
+                    <li>Mobile: +65-82491912</li>
                     <li>
                         GitHub:{' '}
                         <a href="https://github.com/yapitw/" target="_blank">
