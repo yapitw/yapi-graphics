@@ -72,7 +72,7 @@ const About = () => {
                     <li>3D Computer graphics fundamental.</li>
                     <li>Back-end development (Node.js).</li>
                 </ul>
-                <h3 className="subtitle">Graphics</h3>
+                <h3 className="subtitle">Computer Graphics</h3>
                 <ul>
                     <li>3D progressive modeling, 3D sculpting.</li>
                 </ul>
