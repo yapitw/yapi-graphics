@@ -15,7 +15,9 @@ interface IUniforms {
 export class Lab4 extends ThreeLab {
     static title = 'Reaction Diffusion'
     static tags = 'glsl reaction-diffusion three.js'
-    static description = ''
+    static description = `Further step to make the pattern more usable for design:
+     To add a hidden image layer and use it's color data as the reaction factor 
+     to make the growth area limited in some particular shapes.`
 
     uniforms: IUniforms
     textBuffer1: THREE.WebGLRenderTarget

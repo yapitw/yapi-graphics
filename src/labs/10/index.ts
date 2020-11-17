@@ -4,7 +4,7 @@ export const sketch = (s: P5) => {
     let centerPoint
     let screenCenter
     s.setup = () => {
-        s.createCanvas(400, 400)
+        s.createCanvas(500, 500)
         s.background(100)
         centerPoint = s.createVector(s.width / 2, s.height / 2)
         screenCenter = s.createVector(s.width / 2, s.height / 2)
@@ -31,9 +31,6 @@ export const sketch = (s: P5) => {
 
         s.background('white')
         s.fill(0)
-        s.textSize(16)
-        s.textAlign(LEFT, TOP)
-        s.text(`${mouseX}, ${mouseY}`, 10, 10)
 
         for (let i = 0; i < feats * 2; i++) {
             const radian = s.radians((360 / (feats * 2)) * i - 90)
@@ -92,6 +89,10 @@ export const sketch = (s: P5) => {
 }
 
 export class Lab10 {
+    static title = 'Little Creature'
+    static tags = 'p5js interaction creativeCoding'
+    static description = `Practice of p5.js interaction control`
+
     instance: P5
     playing: boolean = true
     constructor(element: HTMLElement) {
@@ -100,15 +101,5 @@ export class Lab10 {
 
     destroy = () => {
         this.instance.remove()
-    }
-
-    pause = () => {
-        if (!this.playing) return
-        this.playing = false
-    }
-
-    resume = () => {
-        if (this.playing) return
-        this.playing = true
     }
 }
