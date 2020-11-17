@@ -50,11 +50,8 @@ export class Lab7 extends P5Lab {
         particleDots.draw = (particle: Particle) => {
             particle.speed.scale(0.95)
             particle.velocity =
-                forceMap[
-                    `X${Math.floor(particle.x / this.gridSize)}Y${Math.floor(
-                        particle.y / this.gridSize
-                    )}`
-                ] || new Vec2(0, 0)
+                forceMap[`X${Math.floor(particle.x / this.gridSize)}Y${Math.floor(particle.y / this.gridSize)}`] ||
+                new Vec2(0, 0)
 
             this.ctx.globalAlpha = 0.1
             this.ctx.fillStyle = '#ff1100'

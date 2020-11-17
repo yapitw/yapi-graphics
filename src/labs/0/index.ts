@@ -27,10 +27,7 @@ export class Lab0 extends ThreeLab {
             u_time: { type: 'f', value: 1.0 },
             u_resolution: {
                 type: 'v2',
-                value: new THREE.Vector2(
-                    pixelRatio * renderSize,
-                    pixelRatio * renderSize
-                ),
+                value: new THREE.Vector2(pixelRatio * renderSize, pixelRatio * renderSize),
             },
             u_mouse: { type: 'v2', value: new THREE.Vector2() },
         }

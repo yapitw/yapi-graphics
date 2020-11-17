@@ -1,13 +1,11 @@
 export const skillsData: { title: string; content: string }[] = [
     {
         title: 'Javascript',
-        content:
-            'Vanilla JS, ES6, TypeScript, node.js and npm, HTML5 Canvas API',
+        content: 'Vanilla JS, ES6, TypeScript, node.js and npm, HTML5 Canvas API',
     },
     {
         title: 'JS frameworks / libraries',
-        content:
-            'React, Vue, Webpack, Gulp, Three.js, P5.js, D3.js, Express, Jest, React Testing Library, emscripten',
+        content: 'React, Vue, Webpack, Gulp, Three.js, P5.js, D3.js, Express, Jest, React Testing Library, emscripten',
     },
     {
         title: 'HTML',
@@ -52,8 +50,7 @@ export const careerData: {
     },
 
     {
-        title:
-            'United Overseas Bank Limited (UOB) as Front-end developer via Optimum solutions',
+        title: 'United Overseas Bank Limited (UOB) as Front-end developer via Optimum solutions',
         period: 'since Sep 2019, 8 months',
         contents: [
             'Maintain credit card web application UI with React.',

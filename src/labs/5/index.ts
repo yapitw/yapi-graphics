@@ -30,9 +30,7 @@ export class Lab5 extends P5Lab {
     init = () => {
         this.cvs.width = this.width
         this.cvs.height = this.height
-        ;(this.app ? this.app : document.querySelector('body')).appendChild(
-            this.cvs
-        )
+        ;(this.app ? this.app : document.querySelector('body')).appendChild(this.cvs)
 
         this.draw()
         this.update()
@@ -59,10 +57,7 @@ export class Lab5 extends P5Lab {
 
                 this.ctx.beginPath()
                 // this.ctx.globalAlpha = 1
-                this.ctx.translate(
-                    x * this.gridSize + this.gridSize / 2,
-                    y * this.gridSize + this.gridSize / 2
-                )
+                this.ctx.translate(x * this.gridSize + this.gridSize / 2, y * this.gridSize + this.gridSize / 2)
                 this.ctx.rotate(alpha * Math.PI * 8)
                 this.ctx.moveTo(0, 0)
                 this.ctx.lineTo(0, this.gridSize / 2)
@@ -70,17 +65,9 @@ export class Lab5 extends P5Lab {
                 this.ctx.stroke()
 
                 // this.ctx.globalAlpha = 1
-                this.ctx.fillStyle = `rgb(${alpha * 255},${alpha * 255},${
-                    alpha * 255
-                })`
+                this.ctx.fillStyle = `rgb(${alpha * 255},${alpha * 255},${alpha * 255})`
                 this.ctx.beginPath()
-                this.ctx.arc(
-                    (x + 0.5) * this.gridSize,
-                    (y + 0.5) * this.gridSize,
-                    this.gridSize / 6,
-                    0,
-                    2 * Math.PI
-                )
+                this.ctx.arc((x + 0.5) * this.gridSize, (y + 0.5) * this.gridSize, this.gridSize / 6, 0, 2 * Math.PI)
                 this.ctx.fill()
             }
         }

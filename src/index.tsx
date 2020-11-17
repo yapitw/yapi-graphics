@@ -17,23 +17,10 @@ const App: React.FC = () => {
                     <div className="container">
                         <div id="top-anchor" />
                         <Route path={['/exp/', '/noc/']}>
-                            <div
-                                className={[
-                                    'menu-list',
-                                    isMenuShow && 'menu-list--active',
-                                ]
-                                    .filter(Boolean)
-                                    .join(' ')}
-                            >
-                                <div
-                                    className="switch"
-                                    onClick={() => setIsMenuShow(!isMenuShow)}
-                                />
+                            <div className={['menu-list', isMenuShow && 'menu-list--active'].filter(Boolean).join(' ')}>
+                                <div className="switch" onClick={() => setIsMenuShow(!isMenuShow)} />
 
-                                <div
-                                    className="list-wrapper"
-                                    onClick={() => setIsMenuShow(false)}
-                                >
+                                <div className="list-wrapper" onClick={() => setIsMenuShow(false)}>
                                     <MenuList />
                                 </div>
                             </div>

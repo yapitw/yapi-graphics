@@ -51,26 +51,12 @@ export const sketch = (s: P5) => {
                     newPoint.add(mousePoint.sub(newPoint).mult(strength))
                 }
                 newPoint.add(
-                    (((s.noise(
-                        frameCount / (strength > 0.2 ? 10 : 30) + i * 10
-                    ) -
-                        0.5) *
-                        tolerance) /
-                        2) *
-                        strength,
-                    (((s.noise(
-                        frameCount / (strength > 0.2 ? 10 : 30) + i * 10 + 3000
-                    ) -
-                        0.5) *
-                        tolerance) /
-                        2) *
+                    (((s.noise(frameCount / (strength > 0.2 ? 10 : 30) + i * 10) - 0.5) * tolerance) / 2) * strength,
+                    (((s.noise(frameCount / (strength > 0.2 ? 10 : 30) + i * 10 + 3000) - 0.5) * tolerance) / 2) *
                         strength
                 )
             } else {
-                newPoint.add(
-                    s.cos(radian) * radius * 0.4,
-                    s.sin(radian) * radius * 0.4
-                )
+                newPoint.add(s.cos(radian) * radius * 0.4, s.sin(radian) * radius * 0.4)
             }
 
             points.push(newPoint)
@@ -92,11 +78,7 @@ export const sketch = (s: P5) => {
             .sub(centerPoint)
             .setMag(((300 - s.min(0, s.max(300, dist))) / 300) * 5)
         const eyePosition = centerPoint.copy().add(eyeMovement)
-        s.circle(
-            eyePosition.x - 20,
-            eyePosition.y - 20,
-            30 + (nervous ? s.noise(frameCount / 2) : 0.5) * 20
-        )
+        s.circle(eyePosition.x - 20, eyePosition.y - 20, 30 + (nervous ? s.noise(frameCount / 2) : 0.5) * 20)
         s.circle(eyePosition.x + 20, eyePosition.y - 20, 25)
         s.fill(0)
         eyePosition.add(eyeMovement)

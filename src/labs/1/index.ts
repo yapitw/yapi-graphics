@@ -37,14 +37,7 @@ export class Lab1 extends ThreeLab {
             wireframe: false,
             side: THREE.DoubleSide,
         })
-        const geometry = new THREE.TorusKnotBufferGeometry(
-            1,
-            0.25,
-            200,
-            18,
-            4,
-            3
-        )
+        const geometry = new THREE.TorusKnotBufferGeometry(1, 0.25, 200, 18, 4, 3)
         this.mesh = new THREE.Mesh(geometry, material)
         scene.add(this.mesh)
     }

@@ -42,10 +42,7 @@ const ThreeContainer: React.FC<{ id: string }> = (props) => {
             )}
             <p>
                 <span>Source code: </span>
-                <a
-                    target="_blank"
-                    href="https://github.com/yapitw/yapi-graphics/tree/master/src/labs"
-                >
+                <a target="_blank" href="https://github.com/yapitw/yapi-graphics/tree/master/src/labs">
                     GitHub
                 </a>
             </p>

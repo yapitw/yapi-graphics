@@ -75,16 +75,14 @@ export default class PerlinNoise {
             n1 = this.perlin[of & PERLIN_SIZE]
             n1 += rxf * (this.perlin[(of + 1) & PERLIN_SIZE] - n1)
             n2 = this.perlin[(of + PERLIN_YWRAP) & PERLIN_SIZE]
-            n2 +=
-                rxf * (this.perlin[(of + PERLIN_YWRAP + 1) & PERLIN_SIZE] - n2)
+            n2 += rxf * (this.perlin[(of + PERLIN_YWRAP + 1) & PERLIN_SIZE] - n2)
             n1 += ryf * (n2 - n1)
 
             of += PERLIN_ZWRAP
             n2 = this.perlin[of & PERLIN_SIZE]
             n2 += rxf * (this.perlin[(of + 1) & PERLIN_SIZE] - n2)
             n3 = this.perlin[(of + PERLIN_YWRAP) & PERLIN_SIZE]
-            n3 +=
-                rxf * (this.perlin[(of + PERLIN_YWRAP + 1) & PERLIN_SIZE] - n3)
+            n3 += rxf * (this.perlin[(of + PERLIN_YWRAP + 1) & PERLIN_SIZE] - n3)
             n2 += ryf * (n3 - n2)
 
             n1 += scaled_cosine(zf) * (n2 - n1)

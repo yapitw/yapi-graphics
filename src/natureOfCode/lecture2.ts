@@ -256,12 +256,7 @@ export const lecture2_3 = (s: p5) => {
         s.background(0)
 
         for (let i = 0; i < 10; i++) {
-            movers[i] = new Mover(
-                s.random(s.width),
-                s.random(100),
-                s.random(0.5, 5),
-                s
-            )
+            movers[i] = new Mover(s.random(s.width), s.random(100), s.random(0.5, 5), s)
         }
     }
 
@@ -368,12 +363,7 @@ export const lecture2_4 = (s: p5) => {
         s.background(0)
 
         for (let i = 0; i < 10; i++) {
-            movers[i] = new Mover(
-                s.random(s.width),
-                s.random(100),
-                s.random(1, 5),
-                s
-            )
+            movers[i] = new Mover(s.random(s.width), s.random(100), s.random(1, 5), s)
         }
     }
 

@@ -41,10 +41,7 @@ export class Lab2 extends ThreeLab {
             u_time: { type: 'f', value: 1.0 },
             u_resolution: {
                 type: 'v2',
-                value: new THREE.Vector2(
-                    renderSize * pixelRatio,
-                    renderSize * pixelRatio
-                ),
+                value: new THREE.Vector2(renderSize * pixelRatio, renderSize * pixelRatio),
             },
             u_mouse: { type: 'v2', value: new THREE.Vector2() },
             u_texture: { type: 't', value: undefined },
@@ -68,31 +65,17 @@ export class Lab2 extends ThreeLab {
             wrapS: THREE.RepeatWrapping,
             wrapT: THREE.RepeatWrapping,
         }
-        this.textBuffer1 = new THREE.WebGLRenderTarget(
-            renderSize * pixelRatio,
-            renderSize * pixelRatio,
-            targetOptions
-        )
-        this.textBuffer2 = new THREE.WebGLRenderTarget(
-            renderSize * pixelRatio,
-            renderSize * pixelRatio,
-            targetOptions
-        )
+        this.textBuffer1 = new THREE.WebGLRenderTarget(renderSize * pixelRatio, renderSize * pixelRatio, targetOptions)
+        this.textBuffer2 = new THREE.WebGLRenderTarget(renderSize * pixelRatio, renderSize * pixelRatio, targetOptions)
     }
     animation = () => {
         if (!this.playing) return
         const { scene, camera, renderer } = this
         for (let i = 0; i < 8; i++) {
-            this.uniforms.u_texture.value = this[
-                this.switchTag ? 'textBuffer1' : 'textBuffer2'
-            ].texture
-            renderer.setRenderTarget(
-                this[this.switchTag ? 'textBuffer2' : 'textBuffer1']
-            )
+            this.uniforms.u_texture.value = this[this.switchTag ? 'textBuffer1' : 'textBuffer2'].texture
+            renderer.setRenderTarget(this[this.switchTag ? 'textBuffer2' : 'textBuffer1'])
             renderer.render(scene, camera)
-            this.uniforms.u_texture.value = this[
-                this.switchTag ? 'textBuffer2' : 'textBuffer1'
-            ].texture
+            this.uniforms.u_texture.value = this[this.switchTag ? 'textBuffer2' : 'textBuffer1'].texture
             this.switchTag = !this.switchTag
             this.uniforms.u_time.value += 1
         }

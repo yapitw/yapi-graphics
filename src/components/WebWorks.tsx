@@ -29,29 +29,19 @@ const webWorkData: {
         link: 'http://yapitw.github.io/wordsring/build',
         sourceCode: 'https://github.com/yapitw/yapi-graphics',
         image: img_wordsring,
-        contents: [
-            'Entire page.',
-            'Use three.js webgl library simulating 3D ring with customized content.',
-        ],
+        contents: ['Entire page.', 'Use three.js webgl library simulating 3D ring with customized content.'],
     },
     {
         title: "Arc'teryx NODIN",
         link: 'http://www.starlike.com.tw/ARC/NODIN/',
         image: img_arcteryx,
-        contents: [
-            'HTML CSS Layout slicing according to design.',
-            'CSS Animation.',
-            'JQuery interaction.',
-        ],
+        contents: ['HTML CSS Layout slicing according to design.', 'CSS Animation.', 'JQuery interaction.'],
     },
     {
         title: 'InnoLux recruitment',
         link: 'https://www.104.com.tw/cfdocs/project/1707/170707_innolux_hr/',
         image: img_innolux,
-        contents: [
-            'Main vision interaction.',
-            'HTML CSS Layout slicing according to design.',
-        ],
+        contents: ['Main vision interaction.', 'HTML CSS Layout slicing according to design.'],
     },
 ]
 
@@ -72,11 +62,7 @@ const WebWorks = () => {
                                     {work.link}
                                 </a>
                                 {work.sourceCode && (
-                                    <a
-                                        style={{ marginLeft: '1em' }}
-                                        href={work.sourceCode}
-                                        target="_blank"
-                                    >
+                                    <a style={{ marginLeft: '1em' }} href={work.sourceCode} target="_blank">
                                         source code
                                     </a>
                                 )}
@@ -86,9 +72,7 @@ const WebWorks = () => {
                                     {work.contents.map((content, index) => {
                                         return (
                                             <React.Fragment key={index}>
-                                                <span key={index}>
-                                                    {content}
-                                                </span>
+                                                <span key={index}>{content}</span>
                                                 <br />
                                             </React.Fragment>
                                         )

@@ -42,8 +42,7 @@ export class Lab4 extends ThreeLab {
         camera.lookAt(0, 0, 0)
 
         this.canvas = this.container.querySelector('canvas')
-        this.canvas.style.filter =
-            'saturate(0) brightness(1.2) contrast(2) invert(1)'
+        this.canvas.style.filter = 'saturate(0) brightness(1.2) contrast(2) invert(1)'
         const geometry = new THREE.PlaneBufferGeometry(2, 2)
         this.uniforms = {
             u_time: { type: 'f', value: 0 },
@@ -72,16 +71,8 @@ export class Lab4 extends ThreeLab {
             wrapS: THREE.RepeatWrapping,
             wrapT: THREE.RepeatWrapping,
         }
-        this.textBuffer1 = new THREE.WebGLRenderTarget(
-            renderSize * pixelRatio,
-            renderSize * pixelRatio,
-            targetOptions
-        )
-        this.textBuffer2 = new THREE.WebGLRenderTarget(
-            renderSize * pixelRatio,
-            renderSize * pixelRatio,
-            targetOptions
-        )
+        this.textBuffer1 = new THREE.WebGLRenderTarget(renderSize * pixelRatio, renderSize * pixelRatio, targetOptions)
+        this.textBuffer2 = new THREE.WebGLRenderTarget(renderSize * pixelRatio, renderSize * pixelRatio, targetOptions)
 
         this.uniforms.u_resolution.value.x = renderSize * pixelRatio
         this.uniforms.u_resolution.value.y = renderSize * pixelRatio
@@ -103,8 +94,7 @@ export class Lab4 extends ThreeLab {
             e.preventDefault()
             const boundingRect = this.container.getBoundingClientRect()
             const x = (e.pageX - boundingRect.left) / this.canvas.clientWidth
-            const y =
-                1 - (e.pageY - boundingRect.top) / this.canvas.clientHeight
+            const y = 1 - (e.pageY - boundingRect.top) / this.canvas.clientHeight
 
             this.uniforms.u_mouse.value.x = x
             this.uniforms.u_mouse.value.y = y

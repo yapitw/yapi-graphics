@@ -21,14 +21,10 @@ const About = () => {
         <div className="about two-column">
             <section className="primary">
                 <h1>Pattison Ho</h1>
-                <h3>
-                    Front-end developer with deep design know-how and
-                    visualization techniques.
-                </h3>
+                <h3>Front-end developer with deep design know-how and visualization techniques.</h3>
                 <p className="print-remarks">
-                    This document is printed from{' '}
-                    <a href={location.origin}>{location.origin}</a>, see more my
-                    works in here.
+                    This document is printed from <a href={location.origin}>{location.origin}</a>, see more my works in
+                    here.
                 </p>
             </section>
 
@@ -67,13 +63,8 @@ const About = () => {
                 <h3 className="subtitle">Front-end Development</h3>
                 <ul>
                     <li>Build front-end projects from scratch.</li>
-                    <li>
-                        Integration of web APIs and services including AWS, FB
-                        SDK and GCP ...etc.
-                    </li>
-                    <li>
-                        Good communication with designer and product manager.
-                    </li>
+                    <li>Integration of web APIs and services including AWS, FB SDK and GCP ...etc.</li>
+                    <li>Good communication with designer and product manager.</li>
                     <li>Advanced CSS styles implementation.</li>
                     <li>Progressive graphics coding</li>
                     <li>3D Computer graphics fundamental.</li>
@@ -108,17 +99,11 @@ const About = () => {
                 </h1>
                 <h3 className="subtitle">Self learning</h3>
                 <p>
-                    Learning front-end programming skills and 3D softwares from
-                    several online sources like Udemy, Udacity, Codecademy,
-                    Hahow, Hiskio, Youtube ...ETC.
+                    Learning front-end programming skills and 3D softwares from several online sources like Udemy,
+                    Udacity, Codecademy, Hahow, Hiskio, Youtube ...ETC.
                 </p>
-                <h3 className="subtitle">
-                    Advanced Javascript front-end engineering course
-                </h3>
-                <p>
-                    Information System Training Program from National Taiwan
-                    University.
-                </p>
+                <h3 className="subtitle">Advanced Javascript front-end engineering course</h3>
+                <p>Information System Training Program from National Taiwan University.</p>
                 <h3 className="subtitle">Industrial Design Bachelor degree</h3>
                 <p>National Taipei University of Technology.</p>
             </section>

@@ -108,10 +108,7 @@ export const lecture1_5 = (s: p5) => {
     s.draw = () => {
         s.background(0)
         const pos = s.createVector(s.width / 2, s.height / 2)
-        const mouse = s.createVector(
-            s.mouseX || s.width / 2,
-            s.mouseY || s.height / 2
-        )
+        const mouse = s.createVector(s.mouseX || s.width / 2, s.mouseY || s.height / 2)
 
         const v = p5.Vector.sub(mouse, pos)
 
@@ -144,10 +141,7 @@ export const lecture1_6 = (s: p5) => {
 
         update() {
             const { s } = this
-            let mouse = s.createVector(
-                s.mouseX || s.width / 2,
-                s.mouseY || s.height / 2
-            )
+            let mouse = s.createVector(s.mouseX || s.width / 2, s.mouseY || s.height / 2)
             this.acc = p5.Vector.sub(mouse, this.pos)
             this.acc.setMag(0.5)
             this.vel.add(this.acc)
