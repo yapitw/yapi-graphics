@@ -4,7 +4,8 @@ import { ThreeLab } from '../template'
 export class Lab9 extends ThreeLab {
     static title = 'GLSL Shapes'
     static tags = 'glsl math'
-    static description = `Simple interactive toy for children`
+    static description = `Making a simple clover with maths
+    Practice according to <a target="_blank" href="https://www.youtube.com/watch?v=-z8zLVFCJv4">Inigo Quilez<a>`
 
     constructor(container: HTMLDivElement) {
         super(container)

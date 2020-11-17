@@ -91,7 +91,7 @@ export const sketch = (s: P5) => {
 export class Lab10 {
     static title = 'Little Creature'
     static tags = 'p5js interaction creativeCoding'
-    static description = `Practice of p5.js interaction control`
+    static description = `A simple interactive toy for children. Practice of p5.js interaction control`
 
     instance: P5
     playing: boolean = true

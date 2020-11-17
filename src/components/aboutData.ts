@@ -78,6 +78,7 @@ export const careerData: {
             'Explore social media APIs and use it in projects.',
             'Make applications run well in pc and mobile platforms.',
             'Front-end development. Coding HTML CSS Javascript.',
+            'HTML/JS mini-game program for some promotion events',
             'PUG, SASS preprocessor coding.',
             'Script CSS, SVG animation.',
             'Version control by TortoiseHG.',
