@@ -50,7 +50,7 @@ export class Lab1 extends ThreeLab {
     }
 
     animation = () => {
-        if (!this.playing) return;
+        if (!this.playing) return
         const { scene, camera, renderer } = this
         this.uniforms.u_time.value += 0.005
         renderer.render(scene, camera)

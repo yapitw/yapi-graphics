@@ -93,7 +93,7 @@ export class Lab3 extends ThreeLab {
     }
 
     animation = () => {
-        if (!this.playing) return;
+        if (!this.playing) return
         const { scene, camera, renderer } = this
         for (let i = 0; i < 24; i++) {
             this.uniforms.u_texture.value = this[

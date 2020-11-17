@@ -131,5 +131,5 @@ export class ParticleSystem {
         this.particles = this.particles.filter((particle) => !particle.kill)
     }
 
-    draw = (particle: Particle): void => { }
+    draw = (particle: Particle): void => {}
 }

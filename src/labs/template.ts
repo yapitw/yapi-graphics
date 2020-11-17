@@ -30,15 +30,14 @@ export class ThreeLab {
 
     pause = () => {
         if (!this.playing) return
-        this.playing = false;
+        this.playing = false
     }
     resume = () => {
         if (this.playing) return
-        this.playing = true;
-        this.animation();
+        this.playing = true
+        this.animation()
     }
 }
-
 
 export class P5Lab {
     playing: boolean = true

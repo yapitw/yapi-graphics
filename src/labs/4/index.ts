@@ -102,11 +102,9 @@ export class Lab4 extends ThreeLab {
         const moveHandler = (e) => {
             e.preventDefault()
             const boundingRect = this.container.getBoundingClientRect()
-            const x =
-                (e.pageX - boundingRect.left) / this.canvas.clientWidth
+            const x = (e.pageX - boundingRect.left) / this.canvas.clientWidth
             const y =
-                1 -
-                (e.pageY - boundingRect.top) / this.canvas.clientHeight
+                1 - (e.pageY - boundingRect.top) / this.canvas.clientHeight
 
             this.uniforms.u_mouse.value.x = x
             this.uniforms.u_mouse.value.y = y
@@ -173,7 +171,7 @@ export class Lab4 extends ThreeLab {
     }
 
     animation = () => {
-        if (!this.playing) return;
+        if (!this.playing) return
         const { scene, camera, renderer } = this
         for (let i = 0; i < 4; i++) {
             const textBuffer = this.switchTag ? 'textBuffer1' : 'textBuffer2'

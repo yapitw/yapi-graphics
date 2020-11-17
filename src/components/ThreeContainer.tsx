@@ -15,25 +15,6 @@ const ThreeContainer: React.FC<{ id: string }> = (props) => {
         return () => (newLab.terminated = true)
     }, [id])
 
-    React.useEffect(() => {
-        const scrollContainer = findScrollParent(containerElem.current)
-        const scrollEvent = () => {
-            const boundingRect = containerElem.current?.getBoundingClientRect()
-            if (
-                boundingRect &&
-                boundingRect.top < window.innerHeight &&
-                boundingRect.bottom > 0
-            ) {
-                lab.current?.resume()
-            } else {
-                lab.current?.pause()
-            }
-        }
-        scrollEvent()
-        scrollContainer?.addEventListener('scroll', scrollEvent)
-        return () => scrollContainer?.removeEventListener('scroll', scrollEvent)
-    }, [])
-
     const { title, description, tags } = (labs[id] || {}) as labs.ILab
 
     if (!id) {
@@ -73,14 +54,3 @@ const ThreeContainer: React.FC<{ id: string }> = (props) => {
 }
 
 export default ThreeContainer
-
-function findScrollParent(elem: HTMLElement) {
-    let scrollParent = elem.parentElement
-    while (
-        scrollParent &&
-        scrollParent.scrollHeight <= scrollParent.clientHeight
-    ) {
-        scrollParent = scrollParent.parentElement
-    }
-    return scrollParent
-}

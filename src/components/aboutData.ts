@@ -1,4 +1,4 @@
-export const skillsData: { title: string, content: string }[] = [
+export const skillsData: { title: string; content: string }[] = [
     {
         title: 'Javascript',
         content:
@@ -35,28 +35,33 @@ export const skillsData: { title: string, content: string }[] = [
     },
 ]
 
-export const careerData: { title: string, period: string, contents: string[] }[] = [
+export const careerData: {
+    title: string
+    period: string
+    contents: string[]
+}[] = [
     {
         title: 'Screening Eagle Dreamlab as Front-end developer',
         period: 'since May 2020, present',
         contents: [
             "Maintain product's back office platform UI with TypeScript and React.",
-            "Maintain 3D front-end features.",
-            "Update and refactor existing code base.",
-            "Build new features for the incoming product plan."
-        ]
+            'Maintain 3D front-end features.',
+            'Update and refactor existing code base.',
+            'Build new features for the incoming product plan.',
+        ],
     },
 
     {
-        title: 'United Overseas Bank Limited (UOB) as Front-end developer via Optimum solutions',
+        title:
+            'United Overseas Bank Limited (UOB) as Front-end developer via Optimum solutions',
         period: 'since Sep 2019, 8 months',
         contents: [
             'Maintain credit card web application UI with React.',
             'Build event application UI with React.',
             'Provide front-end supports to the other teams.',
             'Evaluate efforts needed for incoming changes with product owner and backend developer.',
-            'Play as a Scrum developer.'
-        ]
+            'Play as a Scrum developer.',
+        ],
     },
     {
         title: 'Orion Consultancy as Web Developer',
@@ -65,8 +70,8 @@ export const careerData: { title: string, period: string, contents: string[] }[]
             'Develop frontend projects User Interface with React.',
             'Fix and Maintain backend User Interface with React TypeScript.',
             'Migrate old projects into newer technology for better maintenance.',
-            'Apply requirements and slice web pages.'
-        ]
+            'Apply requirements and slice web pages.',
+        ],
     },
     {
         title: '18Design Co., Ltd. as Web Front-end Developer',
@@ -79,7 +84,7 @@ export const careerData: { title: string, period: string, contents: string[] }[]
             'PUG, SASS preprocessor coding.',
             'Script CSS, SVG animation.',
             'Version control by TortoiseHG.',
-        ]
+        ],
     },
     {
         title: 'trii collection SOHO studio as Founder',
@@ -91,8 +96,8 @@ export const careerData: { title: string, period: string, contents: string[] }[]
             'Modeler - Progressive 3D model design.',
             'Manipulation of 3D printing process.',
             'Contract products development.',
-            'Web page building - HTML, CSS, Javascript, JQuery'
-        ]
+            'Web page building - HTML, CSS, Javascript, JQuery',
+        ],
     },
     {
         title: 'Aye-star Co., Ltd. as Special Assistant',
@@ -102,7 +107,6 @@ export const careerData: { title: string, period: string, contents: string[] }[]
             'End-to-end order management, from component to final product.',
             'Key officer translating customer in to feasible production process.',
             'Quality control tour with customer.',
-        ]
-
-    }
+        ],
+    },
 ]
