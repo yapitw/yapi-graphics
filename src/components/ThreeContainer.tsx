@@ -9,12 +9,6 @@ const ThreeContainer: React.FC<{ id: string }> = (props) => {
     const lab = React.useRef<ThreeLab | undefined>()
 
     React.useEffect(() => {
-        const preventScroll = (e) => e.preventDefault()
-        containerElem.current.addEventListener('touchmove', preventScroll)
-        return () => containerElem.current.addEventListener('touchmove', preventScroll)
-    }, [])
-
-    React.useEffect(() => {
         if (id === undefined) return () => {}
         const newLab = new labs[id](containerElem.current)
         lab.current = newLab

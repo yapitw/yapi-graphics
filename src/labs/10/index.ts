@@ -93,13 +93,17 @@ export class Lab10 {
     static tags = 'p5js interaction creativeCoding'
     static description = `A simple interactive toy for children. Practice of p5.js interaction control`
 
+    container: HTMLElement
     instance: P5
     playing: boolean = true
     constructor(element: HTMLElement) {
         this.instance = new P5(sketch, element)
+        this.container = element
+        this.container.addEventListener('touchmove', this.preventScroll)
     }
-
+    preventScroll = (e) => e.preventDefault()
     destroy = () => {
+        this.container.addEventListener('touchmove', this.preventScroll)
         this.instance.remove()
     }
 }
