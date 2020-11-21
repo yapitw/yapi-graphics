@@ -44,7 +44,6 @@ const About = () => {
                             yapi.tw@gmail.com
                         </a>
                     </li>
-                    <li>Mobile: +65-82491912</li>
                     <li>
                         GitHub:{' '}
                         <a href="https://github.com/yapitw/" target="_blank">
