@@ -225,7 +225,7 @@ p {
     overflow: auto;
 
     canvas {
-        height: auto !important;
+        height: auto;
         max-width: 100%;
         max-height: 100vh;
         object-fit: contain;
