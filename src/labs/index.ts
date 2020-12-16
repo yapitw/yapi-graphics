@@ -5,9 +5,9 @@ export interface ILab {
     tags: string
 }
 
-export { Lab0 } from './0'
-export { Lab1 } from './1'
-export { Lab2 } from './2'
+// export { Lab0 } from './0'
+// export { Lab1 } from './1'
+// export { Lab2 } from './2'
 export { Lab3 } from './3'
 export { Lab4 } from './4'
 export { Lab5 } from './5'
