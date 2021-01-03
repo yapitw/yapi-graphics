@@ -24,7 +24,7 @@ const Lecture: React.FC<RouteComponentProps<{ lecture: string }>> = (props) => {
         <div className="text">
             <h1>The Nature of Code</h1>
             <p>{title}</p>
-            <div ref={canvasElem} key={lecture}></div>
+            <div ref={canvasElem} key={lecture} className="canvas-wrapper"></div>
             <p>
                 <span>Practice according to </span>
                 <a href="https://www.youtube.com/playlist?list=PLRqwX-V7Uu6ZV4yEcW3uDwOgGXKUUsPOM" target="_blank">

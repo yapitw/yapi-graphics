@@ -35,7 +35,7 @@ const ThreeContainer: React.FC<{ id: string }> = (props) => {
                     </p>
                 )}
             </div>
-            <div key={id} ref={containerElem} style={{ display: 'flex' }} />
+            <div key={id} ref={containerElem} className="canvas-wrapper" style={{ display: 'flex' }} />
             {description && (
                 <p
                     dangerouslySetInnerHTML={{
