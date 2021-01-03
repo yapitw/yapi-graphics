@@ -23,7 +23,7 @@ const MenuList = () => {
                         .reverse()
                         .map((sketch) => (
                             <NavLink to={'/noc/' + sketch} key={sketch}>
-                                {sketch.replace('lecture', 'lecture ').replace('_', '.')}
+                                {sketch.replace('lecture', 'EP ').replace('_', '.')}
                                 <br />
                                 {sketches[sketch].title}
                             </NavLink>
