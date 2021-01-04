@@ -1,4 +1,5 @@
 import p5 from 'p5'
+import { CANVAS_SIZE } from './configs'
 
 export const lecture1_1 = (s: p5) => {
     class Walker {
@@ -24,8 +25,8 @@ export const lecture1_1 = (s: p5) => {
     let walker: Walker
 
     s.setup = () => {
-        s.createCanvas(400, 400)
-        walker = new Walker(200, 200, s)
+        s.createCanvas(CANVAS_SIZE, CANVAS_SIZE)
+        walker = new Walker(CANVAS_SIZE / 2, CANVAS_SIZE / 2, s)
         s.background(0)
     }
 
@@ -67,8 +68,8 @@ export const lecture1_2 = (s: p5) => {
     let walker: Walker
 
     s.setup = () => {
-        s.createCanvas(400, 400)
-        walker = new Walker(200, 200, s)
+        s.createCanvas(CANVAS_SIZE, CANVAS_SIZE)
+        walker = new Walker(CANVAS_SIZE / 2, CANVAS_SIZE / 2, s)
     }
 
     s.draw = () => {
@@ -81,7 +82,7 @@ lecture1_2.title = 'Vector Math - Add'
 
 export const lecture1_3 = (s: p5) => {
     s.setup = () => {
-        s.createCanvas(400, 400)
+        s.createCanvas(CANVAS_SIZE, CANVAS_SIZE)
         s.background(0)
     }
 
@@ -101,7 +102,7 @@ lecture1_3.title = 'Vector Math - Random Vector'
 
 export const lecture1_5 = (s: p5) => {
     s.setup = () => {
-        s.createCanvas(400, 400)
+        s.createCanvas(CANVAS_SIZE, CANVAS_SIZE)
         s.background(0)
     }
 
@@ -161,10 +162,10 @@ export const lecture1_6 = (s: p5) => {
     let mover: Mover
 
     s.setup = () => {
-        s.createCanvas(400, 400)
+        s.createCanvas(CANVAS_SIZE, CANVAS_SIZE)
         s.translate(s.width / 2, s.height / 2)
         s.background(0)
-        mover = new Mover(200, 200, s)
+        mover = new Mover(CANVAS_SIZE / 2, CANVAS_SIZE / 2, s)
     }
 
     s.draw = () => {
@@ -186,9 +187,9 @@ export const lecture1_7 = (s: p5) => {
     let pos: p5.Vector
 
     s.setup = () => {
-        s.createCanvas(400, 400)
+        s.createCanvas(CANVAS_SIZE, CANVAS_SIZE)
         s.background(0)
-        pos = s.createVector(200, 200)
+        pos = s.createVector(CANVAS_SIZE / 2, CANVAS_SIZE / 2)
         prevPos = pos.copy()
     }
 

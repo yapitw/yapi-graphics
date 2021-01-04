@@ -3,6 +3,7 @@ import p5 from 'p5'
 import { RouteComponentProps } from 'react-router'
 import * as sketches from '../natureOfCode'
 import { NavLink } from 'react-router-dom'
+import { CANVAS_SIZE } from '../natureOfCode/configs'
 
 const Lecture: React.FC<RouteComponentProps<{ lecture: string }>> = (props) => {
     const lecture = props.match.params.lecture
@@ -24,7 +25,9 @@ const Lecture: React.FC<RouteComponentProps<{ lecture: string }>> = (props) => {
         <div className="text">
             <h1>The Nature of Code</h1>
             <p>{title}</p>
-            <div ref={canvasElem} key={lecture} className="canvas-wrapper"></div>
+            <div className="canvas-wrapper" style={{ width: CANVAS_SIZE }}>
+                <div ref={canvasElem} key={lecture}></div>
+            </div>
             <p>
                 <span>Practice according to </span>
                 <a href="https://www.youtube.com/playlist?list=PLRqwX-V7Uu6ZV4yEcW3uDwOgGXKUUsPOM" target="_blank">

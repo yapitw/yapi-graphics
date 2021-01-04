@@ -1,20 +1,21 @@
 import p5 from 'p5'
 import SimplexNoise from 'simplex-noise'
+import { CANVAS_SIZE } from './configs'
 
 export const lecture0_3 = (s: p5) => {
     let offset1 = 200
     let offset2 = 10000
 
     s.setup = () => {
-        s.createCanvas(400, 400)
+        s.createCanvas(CANVAS_SIZE, CANVAS_SIZE)
     }
 
     s.draw = () => {
         s.background(51)
         offset1 += 0.02
         offset2 += 0.02
-        const x = s.map(s.noise(offset1), 0, 1, 0, 400)
-        const y = s.map(s.noise(offset2), 0, 1, 0, 400)
+        const x = s.map(s.noise(offset1), 0, 1, 0, CANVAS_SIZE)
+        const y = s.map(s.noise(offset2), 0, 1, 0, CANVAS_SIZE)
         s.ellipse(x, y, 20, 20)
     }
 
@@ -27,7 +28,7 @@ export const lecture0_4 = (s: p5) => {
     let increment = 0.01
 
     s.setup = () => {
-        s.createCanvas(400, 400)
+        s.createCanvas(CANVAS_SIZE, CANVAS_SIZE)
     }
 
     s.draw = () => {
@@ -57,7 +58,7 @@ export const lecture0_5 = (s: p5) => {
     const inc = 0.01
 
     s.setup = () => {
-        s.createCanvas(400, 400)
+        s.createCanvas(CANVAS_SIZE, CANVAS_SIZE)
         s.pixelDensity(1)
         s.noiseDetail(8, 0.5)
     }
@@ -92,7 +93,7 @@ export const lecture0_6 = (s: p5) => {
     const increment = 0.01
 
     s.setup = () => {
-        s.createCanvas(400, 400)
+        s.createCanvas(CANVAS_SIZE, CANVAS_SIZE)
         s.pixelDensity(1)
     }
 
@@ -124,10 +125,10 @@ export const lecture0_7 = (s: p5) => {
     let x = 0
     let y = 0
     s.setup = () => {
-        s.createCanvas(400, 400)
+        s.createCanvas(CANVAS_SIZE, CANVAS_SIZE)
         s.background(51)
-        x = 200
-        y = 200
+        x = CANVAS_SIZE / 2
+        y = CANVAS_SIZE / 2
     }
 
     s.draw = () => {

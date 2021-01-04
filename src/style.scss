@@ -226,9 +226,13 @@ p {
 }
 
 .canvas-wrapper {
-    position: relative;
-    width: 100%;
-    padding-top: 100%;
+    width: 500px;
+    max-width: 100%;
+    > div {
+        position: relative;
+        width: 100%;
+        padding-top: 100%;
+    }
     canvas {
         position: absolute;
         left: 0;

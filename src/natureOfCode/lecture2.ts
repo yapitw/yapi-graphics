@@ -1,5 +1,6 @@
 import p5 from 'p5'
 import { moveEmitHelpers } from 'typescript'
+import { CANVAS_SIZE } from './configs'
 
 export const lecture2_1 = (s: p5) => {
     class Mover {
@@ -56,9 +57,9 @@ export const lecture2_1 = (s: p5) => {
     let mover: Mover
 
     s.setup = () => {
-        s.createCanvas(400, 400)
+        s.createCanvas(CANVAS_SIZE, CANVAS_SIZE)
         s.background(0)
-        mover = new Mover(200, 200, s)
+        mover = new Mover(CANVAS_SIZE / 2, CANVAS_SIZE / 2, s)
     }
 
     s.draw = () => {
@@ -139,7 +140,7 @@ export const lecture2_2 = (s: p5) => {
     let moverB: Mover
 
     s.setup = () => {
-        s.createCanvas(400, 400)
+        s.createCanvas(CANVAS_SIZE, CANVAS_SIZE)
         s.background(0)
         moverA = new Mover(100, 200, 10, s)
         moverB = new Mover(300, 200, 1, s)
@@ -252,7 +253,7 @@ export const lecture2_3 = (s: p5) => {
     const mu = 0.1
 
     s.setup = () => {
-        s.createCanvas(400, 400)
+        s.createCanvas(CANVAS_SIZE, CANVAS_SIZE)
         s.background(0)
 
         for (let i = 0; i < 10; i++) {
@@ -359,7 +360,7 @@ export const lecture2_4 = (s: p5) => {
     const dragC = 0.1
 
     s.setup = () => {
-        s.createCanvas(400, 400)
+        s.createCanvas(CANVAS_SIZE, CANVAS_SIZE)
         s.background(0)
 
         for (let i = 0; i < 10; i++) {
