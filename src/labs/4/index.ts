@@ -3,7 +3,7 @@ import { ThreeLab } from '../template'
 
 const texture = new THREE.TextureLoader().load('dist/doodle.png')
 
-interface IUniforms {
+type IUniforms = {
     u_time: { type: 'f'; value: number }
     u_resolution: { type: 'v2'; value: THREE.Vector2 }
     u_mouse: { type: 'v2'; value: THREE.Vector2 }
@@ -123,7 +123,7 @@ export class Lab4 extends ThreeLab {
             end: '',
         }
 
-        const inputDetection = (e: MouseEvent) => {
+        const inputDetection = (e: Event) => {
             e.preventDefault()
             if (e.type == 'touchstart') {
                 input.start = 'touchstart'

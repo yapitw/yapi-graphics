@@ -3,7 +3,7 @@ import { ThreeLab } from '../template'
 
 const texture = new THREE.TextureLoader().load('dist/doodle.png')
 
-interface IUniforms {
+type IUniforms = {
     u_time: { type: 'f'; value: number }
     u_resolution: { type: 'v2'; value: THREE.Vector2 }
     u_mouse: { type: 'v2'; value: THREE.Vector2 }
