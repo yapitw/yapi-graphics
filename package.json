@@ -23,7 +23,7 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "simplex-noise": "^2.4.0",
-    "three": "^0.115.0"
+    "three": "^0.124.0"
   },
   "devDependencies": {
     "glslify-bundle": "^5.1.1",
